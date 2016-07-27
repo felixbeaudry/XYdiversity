@@ -93,6 +93,13 @@ Wright's (1931) formula $N_{e}=4N_{f}N_{m}/(N_{f} + N_{m})$ gives the effective 
 \end{figure}
 
 \subsection*{Simulations of Background Selection and Selective Sweeps}
+To investigate whether our observed level of Y-chromosome diversity could be explained by background selection, we conducted forward time simulations..a %using the software packages fwdpp and fwdpy (Thornton, 2014), and analyzed the output using libsequence (Thornton 2003) and standard Python. To match the sample size of our empirical data, we simulated sex chromosomes and autosomes from 24 individuals , and collected diversity statistics after evolving populations under background selection for 10N generations with 1000 replicates each. To consider only the effects of selection against deleterious alleles, we ignored adaptive mutations and sampled selective coefficients from a gamma distribution with shape parameter 0.1, mean selection coefficient s = -0.01, neutral mutation rate μ = 0.005, deleterious mutation rate U = 0.01 (diploid), and dominance term h = 1 . Our simulations assumed that recombination did not occur on Y-chromosomes, whereas we allowed X chromosomes and autosomes to experience free recombination uniformly throughout their length. Initial effective population sizes for simulated sex chromosomes were set such that NeX/NeA = 3/4 and NeY/NeA = 1/4, with an initial NeA of 1000. To compare the simulation output with our empirical data, we calculated the average θ over all simulations, and calculated normalized X/A and Y/A ratios of neutral diversity (Figure 2). Confidence intervals were calculated from bootstrapping 10000 replicate simulations  using the BCa method (Efron 1987) implemented in the Boot package in R (Canty and Ripley 2012; R Core Team 2011). 
+
+
+%We modeled both purifying and positive selection using the forward simulation software SFS_CODE [64].  Y chromosome per generation per base pair mutation rate, and sampling 8 chromosomes per simulation to match the sample size of our observed data. SFS_CODE starts with the ancestral number of chromosomes and simulates a haploid population forward in time. Thus, when rescaling the effective population size from the autosomal estimates, for SFS_CODE we used the same diploid autosomal ancestral effective population size for both populations (N=10,000). The Y chromosome effective size was then found using the same process described above for the neutral coalescent simulations.
+
+%We ran 1000 replicates for each set of selection parameters in each population. For each replicate we calculated p*, the simulated per site nucleotide diversity (average number of pairwise differences). The similarly calculated observed Y diversity is denoted pobs. For each set of parameter values we then calculated P1, the proportion of simulation replicates with p*.pobs was used to calculate a 2-sided P-value by P2 = 1226|P220.5|. Models with could not be rejected and were considered to fit the observed data.
+
 
 \begin{equation}
 S_n = \frac{X_1 + X_2 + \cdots + X_n}{n}
@@ -104,24 +111,6 @@ S_n = \frac{X_1 + X_2 + \cdots + X_n}{n}
 \section*{Results and Discussion}
 
 \subsection*{Evolutionary relationships of sex chromosome races in \textit{R. hastatulus}}
-\subsection*{Y-chromosome diversity is significantly lower than predicted by neutrality}
-
-\begin{table*}[htbp]
-\centering
-\caption{\bf Students and their grades}
-\begin{tableminipage}{\textwidth}
-\begin{tabularx}{\textwidth}{XXXX}
-\hline
-Student & Grade\footnote{This is an example of a footnote in a table. Lowercase, superscript italic letters (a, b, c, etc.) are used by default. You can also use *, **, and *** to indicate conventional levels of statistical significance, explained below the table.} & Rank & Notes \\
-\hline
-Alice & 82\% & 1 & Performed very well.\\
-Bob & 65\% & 3 & Not up to his usual standard.\\
-Charlie & 73\% & 2 & A good attempt.\\
-\hline
-\end{tabularx}
-  \label{tab:shape-functions}
-\end{tableminipage}
-\end{table*}
 
 \subsection*{Male-to-female sex ratio of $N_{e}$}
 
