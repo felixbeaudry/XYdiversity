@@ -20,13 +20,17 @@ Here are some links to the data that are stored on the Grandiflora server
 + family ```/cap1/josh.hough/```
 + Population ```/cap1/josh.hough/```
 
+#### Sex-linked and autosomal gene lists
+
+XYgenes.list.txt
+
 ## Scripts and Software
 
 Software version used in downstream analyses (some of which are modified versions of the originals)
 
 + Polymorphurama
 + MLHKA
-+ SFS_CODE
++ [SFS_CODE](http://sfscode.sourceforge.net/SFS_CODE/index/index.html)
 + msstats
 
 ### Genome alignments, genotype likelihoods, SNP calling
