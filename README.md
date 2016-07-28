@@ -26,10 +26,13 @@ XYgenes.list.txt
 
 ## Scripts and Software
 
-Software version used in downstream analyses (some of which are modified versions of the originals)
+Software versions used in downstream analyses (modified versions of the originals)
 
-+ Polymorphurama
++ [Polymorphurama](https://github.com/houghjosh/XYdiversity/tree/master/Polymorphurama_modified)
 + [MLHKA](https://github.com/houghjosh/XYdiversity/tree/master/MLHKA_modified)
+
+Other software used
+
 + [SFS_CODE](http://sfscode.sourceforge.net/SFS_CODE/index/index.html)
 + [msstats](https://github.com/molpopgen/msstats)
 
