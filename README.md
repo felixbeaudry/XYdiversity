@@ -29,9 +29,9 @@ XYgenes.list.txt
 Software version used in downstream analyses (some of which are modified versions of the originals)
 
 + Polymorphurama
-+ MLHKA
++ [MLHKA](https://github.com/houghjosh/XYdiversity/tree/master/MLHKA_modified)
 + [SFS_CODE](http://sfscode.sourceforge.net/SFS_CODE/index/index.html)
-+ msstats
++ [msstats](https://github.com/molpopgen/msstats)
 
 ### Genome alignments, genotype likelihoods, SNP calling
 + BWA alignments : ``BWA-mem.sh``
