@@ -4,10 +4,10 @@ This repository stores the code, files, and links to the sequence data used in o
 
 ## Data access
 
-Here are locations of the data on the Grandiflora server, for my sanity. I'll replace these with links to public data repos later.
+Here are locations of the data on the Capsicum server, for my sanity. Not completed yet, so paths are currently incomplete (as of July 28). I'll replace these with links to public data repos later.
 
 #### Reference transcriptomes and genomes
-+ _R. hastatulus_ transcriptome: ```/cap1/josh.hough/Rhastatulus.fa```
++ _R. hastatulus_ transcriptome: ```/cap1/josh.hough/```
 + _R. hastatulus_ genome: ```/cap1/josh.hough/```
 + _R. bucephalophorus_ transcriptome: ```/cap1/josh.hough/```
 
