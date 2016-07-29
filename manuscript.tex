@@ -5,6 +5,8 @@
 %\setlength{\marginparwidth}{1.25cm}
 \definecolor{flame}{rgb}{0.89, 0.35, 0.13}
 \newcommand{\josh}[1]{\textcolor{flame}{\emph{\scriptsize {#1}}}}
+\newcommand{\citex}{\textcolor{red}{\bf (CITE)\,}}
+\newcommand{\out}[1]{\textcolor{red}{#1}} %outline placeholder text
 
 \articletype{gos} % article type
 % {inv} Investigation
@@ -109,7 +111,7 @@ To investigate whether our observed level of Y-chromosome diversity could be exp
 \end{itemize}
 }
 
-We modeled both purifying and positive selection using the forward simulation software SFS_CODE \citep{hernandez2008flexible}. To make the simulation output more comparable to our data, we used estimates of $\theta$ from our polymorphism data ... A with our empirical sampling, the simulations sampled 8 chromosomes per simulation. 
+We modeled both purifying and positive selection using the forward simulation software SFSCODE \citep{hernandez2008flexible}. To make the simulation output more comparable to our data, we used estimates of $\theta$ from our polymorphism data ... A with our empirical sampling, the simulations sampled 8 chromosomes per simulation. 
 
 %using the software packages fwdpp and fwdpy (Thornton, 2014), and analyzed the output using libsequence (Thornton 2003) and standard Python. To match the sample size of our empirical data, we simulated sex chromosomes and autosomes from 24 individuals , and collected diversity statistics after evolving populations under background selection for 10N generations with 1000 replicates each. To consider only the effects of selection against deleterious alleles, we ignored adaptive mutations and sampled selective coefficients from a gamma distribution with shape parameter 0.1, mean selection coefficient s = -0.01, neutral mutation rate μ = 0.005, deleterious mutation rate U = 0.01 (diploid), and dominance term h = 1 . Our simulations assumed that recombination did not occur on Y-chromosomes, whereas we allowed X chromosomes and autosomes to experience free recombination uniformly throughout their length. Initial effective population sizes for simulated sex chromosomes were set such that NeX/NeA = 3/4 and NeY/NeA = 1/4, with an initial NeA of 1000. To compare the simulation output with our empirical data, we calculated the average θ over all simulations, and calculated normalized X/A and Y/A ratios of neutral diversity (Figure 2). Confidence intervals were calculated from bootstrapping 10000 replicate simulations  using the BCa method (Efron 1987) implemented in the Boot package in R (Canty and Ripley 2012; R Core Team 2011). 
 
