@@ -9,9 +9,7 @@ set -e
 set -u
 set -o pipefail
 
-##Josh Hough, UC Davis, July 19, 2016
-
-echo "Starting Job: test1"
+echo "Starting Job: test"
 date
 
 sfs_code 1 50 -r 0 -t 0.001375 -P 1 -TE 0.3 -L 2 500000 800000 \
