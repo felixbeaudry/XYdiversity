@@ -4,7 +4,7 @@ This repository stores the code, files, and links to the sequence data used in o
 
 ## Data access
 
-Here are locations of the data on the Capsicum server, for my sanity. Not completed yet, so paths are currently incomplete (as of July 28). I'll replace these with links to public data repos later.
+Here are locations of the data on the Capsicum server, for my sanity. Not finished yet, so paths are currently empty (as of July 29). I'll also replace these with links to public data repos later.
 
 #### Reference transcriptomes and genomes
 + _R. hastatulus_ transcriptome: ```/cap1/josh.hough/```
