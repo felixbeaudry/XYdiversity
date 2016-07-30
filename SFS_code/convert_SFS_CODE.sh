@@ -10,12 +10,11 @@ set -e
 set -u
 set -o pipefail
 
-##Josh Hough, UC Davis, July 08, 2016
+#command structure: convertSFS_CODE [commands] | msstats/src/msstats >out
+# used: - for ms style output T 0 says to output sysnonymous mutations
 
-convertSFS_CODE [commands] | msstats/src/msstats >
+convertSFS_CODE -m T 0 | msstats/src/.msstats > output.txt
 
-
-#Then, using R,
-#x=read.table("output",header=T)
-#mean(x$hsm01[x$pop==0])
-#[1] 0.3511204
+# Then, using R,
+# x=read.table("output",header=T)
+# mean(x$hsm01[x$pop==0])
