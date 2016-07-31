@@ -13,7 +13,7 @@ set -o pipefail
 #command structure: convertSFS CODE <input file> <option [args]> | msstats/src/msstats >out
 # used: - for ms style output; T 0 says to output only sysnonymous mutations
 
-convertSFS_CODE SFS.out -m T 0 | msstats/src/.msstats > stats.txt
+convertSFS_CODE SFS.out -m T 0 | ./msstats/src/msstats > stats.txt
 
 # Then, using R,
 # x=read.table("stats",header=T)
