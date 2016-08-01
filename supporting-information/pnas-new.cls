@@ -131,7 +131,7 @@
                 footskip=25pt]{geometry}
 \RequirePackage[labelfont={bf,sf},%
                 labelsep=period,%
-                figurename=Fig.]{caption}
+                figurename=Figure]{caption}
 \setlength{\columnsep}{13.5pt} % Distance between the two columns of text
 \setlength{\parindent}{12pt} % Paragraph indent
 
