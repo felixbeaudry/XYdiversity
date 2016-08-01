@@ -3,10 +3,10 @@
 
 %\usepackage[colorinlistoftodos]{todonotes} % comments in margins
 %\setlength{\marginparwidth}{1.25cm}
-\definecolor{flame}{rgb}{0.89, 0.35, 0.13}
-\newcommand{\josh}[1]{\textcolor{flame}{\emph{\scriptsize {#1}}}}
-\newcommand{\citex}{\textcolor{red}{\bf (CITE)\,}}
-\newcommand{\out}[1]{\textcolor{red}{#1}} %outline placeholder text
+%\definecolor{flame}{rgb}{0.89, 0.35, 0.13}
+%\newcommand{\josh}[1]{\textcolor{flame}{\emph{\scriptsize {#1}}}}
+%\newcommand{\citex}{\textcolor{red}{\bf (CITE)\,}}
+%\newcommand{\out}[1]{\textcolor{red}{#1}} %outline placeholder text
 \newcommand{\X}{\textcolor{red}{\bf X\,}}
 
 \articletype{gos} % article type
@@ -107,15 +107,6 @@ Wright's (1931) formula $N_{e}=4N_{f}N_{m}/(N_{f} + N_{m})$ gives the effective 
 
 \subsection*{Simulations of Background Selection and Selective Sweeps}
 To investigate whether our observed level of Y-chromosome diversity could be explained by background selection, we conducted forward time simulations..a 
-
-
-\josh{
-\textit{to do}
-\begin{itemize}
-\item \textit{describe parameters used and justify}
-\item \textit{do both purifying and positive selection sims}
-\end{itemize}
-}
 
 We modeled both purifying and positive selection using the forward simulation software SFSCODE \citep{hernandez2008flexible}. To make the simulation output more comparable to our data, we used estimates of $\theta$ from our polymorphism data as a simulation input parameter, and sampled 8 Y chromosomes per simulation from 24 populations to match out empirical data. To consider the effects of selection against deleterious alleles, we sampled selective coefficients from a gamma distribution with shape parameter 0.1, mean selection coefficient $s=-0.01$, neutral mutation rate $\mu = 0.005$, deleterious mutation rate $U=0.01$ (diploid), and dominance term $h=1$. We then calculated the average $\theta$ over all simulations, and obtained the Y/A ratio of neutral diversity under the model and compared this to our empirical data (\X new figure). Confidence intervals were calculated from bootstrapping 10000 replicate simulations  using the BCa method (Efron 1987) implemented in the Boot package in R (Canty and Ripley 2012; R Core Team 2011). 
 
