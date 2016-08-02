@@ -26,3 +26,4 @@
 *.xls
 *.texpadtmp
 *.Rhistory
+*.RData
