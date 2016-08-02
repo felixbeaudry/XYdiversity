@@ -90,10 +90,78 @@ We further validated the results of HAPCUT’s allele phasing by comparing the a
 \subsection*{Estimating neutral polymorphism on sex chromosomes and autosomes}
 For each locus in our analysis, we calculated Watterson’s (1975) estimator of the population parameter $\theta=4N_{e}\mu$, where $N_{e}$ is the effective population size, and $\mu$ is the mutation rate \citep{watterson1975}, using a modified version of the Perl program Polymorphurama \citep{bachtrog2006}. To compare sex-linked and autosomal loci, we calculated the average value of $\theta$, weighted by the number of synonymous sites in each gene (\X Figure 2; Table 1). We obtained 95 percent confidence intervals for our estimates of the X/A and Y/A diversity ratios by bootstrapping by gene using the BCa method \citep{efron1994} implemented in the Boot package in R \citep{canty2012boot}, and calculating X/A and Y/A diversity on each iteration for 20000 replicates each. Bootstrapping was conducted on the final filtered set of 173 sex-linked, and 12355 autosomal genes from the Texas race, and separately for the 176 sex-linked and 11349 autosomal genes from the North Carolina race. Note that the lack of recombination on the Y chromosome implies that assumptions of independent loci are likely violated such that the true uncertainty in our Y/A diversity estimate obtained by this method is likely underestimated. To address this issue, we used a maximum likelihood approach, implemented in the software \citep{wright2004hka}, to independently estimate a credibility interval for the Y/A ratio (see Figure S1). We also tested whether estimates of diversity for the X chromosome calculated from phased sequences from females were consistent with estimates from phased sequences from males. As no significant difference was observed (\X Figure? Table?), we report only results from females.
 
-Finally, we tested for population substructure between the two sex chromosome races to control for the possibility that hidden substructure in our sampled populations might have affected estimates of diversity. To do this, we conducted a phylogenetic analysis of sex-linked sequences from all populations in our study. The analysis was conducted on an alignment of X- and Y-linked genes from \textit{R. hastatulus}, with orthologous autosomal sequences from the non-dioecious but closely related outgroup species \textit{R. bucephalophorus} used to root the tree (\X Figure S2). The phylogeny was inferred using the Neighbor-Joining method \citep{saitou1987neighbor}, with evolutionary distances computed using Maximum Composite Likelihood \citep{tamura2011mega5}. The inferred sequence phylogeny revealed strong support for the Y-linked genes from the $XY_{1}XY_{2}$ ("North Carolina") race being paraphyletic (98 percent bootstrap support), with samples from two populations (hereafter the SC sub-clade) forming a monophyletic group, and samples from Florida and Georgia (hereafter the FL sub-clade) also forming a monophyletic group, which is more closely related to the XY (Texas) race. In light of this evidence for substructure among our samples, we used the inferred phylogeny in our estimation of X and Y diversity.  
+Finally, we tested for population substructure between the two sex chromosome races to control for the possibility that hidden substructure in our sampled populations could affect estimates of diversity. To do this, we conducted a phylogenetic analysis of sex-linked sequences from all populations in our study. The analysis was conducted on an alignment of X- and Y-linked genes from \textit{R. hastatulus}, with orthologous autosomal sequences from the non-dioecious but closely related outgroup species \textit{R. bucephalophorus} used to root the tree (Figure S2). The phylogeny was inferred using the Neighbor-Joining method \citep{saitou1987neighbor}, with evolutionary distances computed using Maximum Composite Likelihood \citep{tamura2011mega5}. The inferred sequence phylogeny revealed strong support for the Y-linked genes from the $XY_{1}XY_{2}$ ("North Carolina") race being paraphyletic (98 percent bootstrap support), with samples from two populations (hereafter the SC sub-clade) forming a monophyletic group, and samples from Florida and Georgia (hereafter the FL sub-clade) also forming a monophyletic group, but more closely related to the XY (Texas) race. In light of this evidence for substructure among our samples, we used the inferred phylogeny (Figure S2) as the basis for our estimates of X and Y diversity.  
 
 \subsection*{Neutral predictions and the effect of sex ratio bias on diversity}
-To test whether our estimates of neutral diversity on sex chromosomes and autosomes could be explained by biased sex ratios or variance in reproductive success, we evaluated the fit of our data to predictions from a standard neutral model. Here, for a female effective population size $N_{f}$, and a male effective population size $N_{m}$, the predicted effective population size for X-linked genes, relative to autosomes, is given by $N_{e_{X}}/N_{e_{A}} = 9(N_{f}+N_{m})/8(2N_{f}+N_{m})$ (Wright 1931). Similarly, for the Y chromosome, the effective population size is given by 1/4 the total $N_{e}$ or 1/2 the $N_{e}$ of males, $N_{m}$/2. Thus, with equal sex ratios, $N_{e_{X}}/N_{e_{A}} = 0.75$, and $N_{e_{Y}}/N_{e_{A}} = 0.25$. For populations with female-biased sex ratios, however, $N_{m}$ becomes small relative to $N_{f}$ and this ratio can become larger than 1, approaching 1.125 at the limit \citep{caballero1995}. With the level of nucleotide polymorphism maintained in a population is proportional to the product of the mutation rate and the effective population size: $\theta=4N_{e}\mu$ \citep{watterson1975,kimura1984}. Figure 1 shows the predicted effective population size ratios for autosomal, X-linked, and Y-linked genes (left) and the corresponding X/A and Y/A ratios of diversity (right) for a sex ratio bias ranging from $N_{f}/(N_{f}+N_{m})=0$ to $N_{f}/(N_{f}+N_{m})=1$.
+To test whether the levels of neutral diversity we observed on X, Y and autosomal chromosomes could be explained by the occurrence of biased reproductive sex ratios or high variance in reproductive success, we compared our empirical estimates of diversity to predictions from a neutral model that jointly considers these two effects. Here, following Nomura (2002), the effective population sizes for autosomal loci are given by:
+
+\begin{equation}
+N_{e{A}} = \frac{4N_{m}N_{f}}{N_{m}(1+C^2_{d{f}})+N_{f}(1+C^2_{d{m}})}\label{eq:NeA}
+\end{equation}
+
+where $N_{m}$ and $N_{f}$ are effective population sizes for males and females, respectively, and $C^2_{d{i}}$ is the coefficient of variation in in mating success for the $i$th sex. Similarly, for X loci, 
+
+\begin{equation}
+N_{e{X}} = \frac{9N_{m}N_{f}}{4N_{m}(1+C^2_{d{f}})+2N_{f}(1+C^2_{d{m}})}\label{eq:NeX}
+\end{equation}
+
+and
+
+\begin{equation}
+N_{e{Y}} = \frac{N_{m}(1+C^2_{d{f}})}{2}\label{eq:NeY}
+\end{equation}
+
+Such that with no variation in mating success for males or females ($C^2_{d{m}}=C^2_{d{f}}=0$), equations 2 and 3 reduces to the familiar expressions:
+
+\begin{equation}
+N_{e{X}} = \frac{9N_{m}N_{f}}{4N_{m}+2N_{f}},\label{eq:NeX}
+\end{equation}
+
+and
+
+\begin{equation}
+N_{e{Y}} = \frac{N_{m}}{2}\label{eq:NeY}
+\end{equation}
+
+respectively. To consider the joint effects of biased sex ratios and variance in male reproductive success (which is more likely in a wind-pollinated annual), our neutrally-expected X/A and Y/A levels of diversity were calculated assuming no variance in female mating (e.g., $C^2_{d{f}}=0$) and we considered values for $C^2_{d{m}}$: 0 (no variance), 1 (Poisson distribution of offspring), 2 (Poisson*2), and 3 (Poisson*3). With the level of neutral polymorphism in a population equalling the product of the mutation rate and the effective population size, $\theta=4N_{e}\mu$ \citep{watterson1975,kimura1984}, Figure 1 shows the predicted X/A and Y/A diversity ratios as a function of the sex ratio and variance in male reproductive success (assuming equal mutation rates among genes). 
+
+
+
+
+
+%The effect of biased reproductive sex ratios on the $N_{e}$ for an autosomal gene can be estimated using the equation \citep{wright1931evolution}:
+
+%\begin{equation}
+%N_{e} = \frac{4N_{m}N_{f}}{N_{m}+N_{f}}\label{eq:Ne}
+%\end{equation}
+
+%where $N_{m}$ and $N_{f}$ are the numbers of reproducing males and females, respectively. Similarly, for an X-linked gene, where females contain two-thirds and males one-third of the alleles, the effective population size is given by:  
+
+%\begin{equation}
+%N_{e{X}} = \frac{9N_{m}N_{f}}{4N_{m}+2N_{f}}\label{eq:NeX}
+%\end{equation}
+
+%And, for the male-limited Y chromosome: 
+
+%\begin{equation}
+%N_{e{Y}} = \frac{N_{m}}{2}\label{eq:NeY}
+%\end{equation}
+
+
+
+%\begin{equation}
+%\frac{N_{e_{X}}}{N_{e_{A}}} = \frac{9(N_{f}+N_{m})}{8(2N_{f}+N_{m})}\label{eq:X/A}
+%\end{equation}
+
+%and, 
+
+%\begin{equation}
+%\frac{N_{e_{Y}}}{N_{e_{A}}} = \frac{9(N_{f}+N_{m})}{8(2N_{f}+N_{m})}\label{eq:X/A}
+%\end{equation}
+
+
+
+ Given a female effective population size $N_{f}$, and a male effective population size $N_{m}$, the predicted effective population size for X-linked genes, relative to autosomes, is given by $N_{e_{X}}/N_{e_{A}} = 9(N_{f}+N_{m})/8(2N_{f}+N_{m})$ (Wright 1931). Similarly, for the Y chromosome, the effective population size is given by 1/4 the total $N_{e}$ or 1/2 the $N_{e}$ of males, $N_{m}$/2. Thus, with equal sex ratios, $N_{e_{X}}/N_{e_{A}} = 0.75$, and $N_{e_{Y}}/N_{e_{A}} = 0.25$. For populations with female-biased sex ratios, however, $N_{m}$ becomes small relative to $N_{f}$ and this ratio can become larger than 1, approaching 1.125 at the limit \citep{caballero1995}. With the level of nucleotide polymorphism maintained in a population is proportional to the product of the mutation rate and the effective population size: $\theta=4N_{e}\mu$ \citep{watterson1975,kimura1984}. Figure 1 shows the predicted effective population size ratios for autosomal, X-linked, and Y-linked genes (left) and the corresponding X/A and Y/A ratios of diversity (right) for a sex ratio bias ranging from $N_{f}/(N_{f}+N_{m})=0$ to $N_{f}/(N_{f}+N_{m})=1$.
 
 %with the level of nucleotide polymorphism maintained in a population is proportional to the product of the mutation rate and the effective population size: $\theta=4N_{e}\mu$
 
