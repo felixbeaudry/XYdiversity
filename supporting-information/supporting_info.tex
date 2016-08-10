@@ -5,7 +5,12 @@
 % may affect the guide line number alignment. 
 
 \templatetype{pnassupportinginfo}
-
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily,
+  showstringspaces=false,
+  commentstyle=\color{red},
+  keywordstyle=\color{blue}
+}
 \title{Supporting Information}
 \author{Hough et al.}
 
@@ -61,7 +66,20 @@ GA-GLA & Gladys, Georgia	 & 97 & 31.48198 & 83.23783 \\
 \label{figure:FigureS2}
 \end{figure}
 
+\newpage
+\section*{Simulation code}
 
-\section*{SI Datasets}
+\begin{lstlisting}
+#!/bin/bash
+
+#purifying selection
+sfs_code 1 50 -r 0 -t 0.001375 -P 1 -TE 0.3 -L 2 500000 800000 \
+-a N -W L 1 2 0 1 1 0.184 0.003 -n 8 -N 500 -A
+
+#positive selection
+sfs_code 1 50 -r 0 -t 0.001375 -P 1 -TE 0.3 -L 2 500000 800000 \
+-a N -W L 1 2 0 1 1 0.184 0.003 -n 8 -N 500 -A
+\end{lstlisting}
+
 
 \end{document}
