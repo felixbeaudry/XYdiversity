@@ -1,10 +1,10 @@
 # Population genetics of X and Y chromosomes in _Rumex hastatulus_
 
-This repository stores the code, files, and links to the sequence data used in our project investigating X and Y chromosome diversity in  _Rumex hastatulus_.
+This repository stores the code, small data files, and links to the sequence data used in our project investigating X and Y chromosome diversity in  _Rumex hastatulus_.
 
 ## Data access
 
-Here are locations of the data on the Capsicum server, for my sanity. Not finished yet (as of July 30). I'll replace these with links to public data repos later.
+Here are locations of the data on the Capsicum server (U of T), for my sanity. Not finished yet (as of Aug. 16). I'll replace these with links to public data repos later.
 
 #### Reference transcriptomes and genomes
 + _R. hastatulus_ transcriptome: ```/cap1/josh.hough/NC_reference```
