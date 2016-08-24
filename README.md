@@ -31,7 +31,9 @@ Modified versions of software used in our downstream analyses:
 + [Polymorphurama](https://github.com/houghjosh/XYdiversity/tree/master/Polymorphurama_modified)
 + [MLHKA](https://github.com/houghjosh/XYdiversity/tree/master/MLHKA_modified)
 
-Links to software used for forward simulations and calculating diversity statistics from simulation output. Bash scripts with input parameters are [here](https://github.com/houghjosh/XYdiversity/tree/master/SFS_code)
+Links to software used for forward simulations and calculating diversity statistics from simulation output.
 
 + [SFS_CODE](http://sfscode.sourceforge.net/SFS_CODE/index/index.html)
 + [msstats](https://github.com/molpopgen/msstats)
+
+Bash scripts with input parameters are [here](https://github.com/houghjosh/XYdiversity/tree/master/SFS_code), and also in the [Supporting Information](https://github.com/houghjosh/XYdiversity/tree/master/supporting-information)
