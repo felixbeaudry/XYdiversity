@@ -1,0 +1,14 @@
+- dfe for the y is probably still fairly similar to that for the x -- shared genes
+
+
+- human Y: genes on y are not on X
+
+- 45331 = synsites in observed data after filtering
+  - summary stats phased texas autospy
+
+- doesnt matter about coding/non-coding in non-recombining regions? all of those neutral sites are linked
+
+
+0.258/(493*4.0909)=0.00214
+
+should be dividing
