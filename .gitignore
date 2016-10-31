@@ -27,3 +27,4 @@
 *.texpadtmp
 *.Rhistory
 *.RData
+*.synctex.gz(busy)
