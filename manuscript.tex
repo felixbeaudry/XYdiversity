@@ -95,22 +95,69 @@ For each locus in our analysis, we calculated Watterson’s (1975) estimator of 
 %Finally, we tested for population substructure within and between the two sex chromosome races to control for the possibility that hidden substructure in our sampled populations could affect estimates of diversity. To do this, we constructed neighbor-joining trees of sex-linked sequences from all populations in our study. The analysis was conducted on an alignment of the X- and Y-linked genes from \textit{R. hastatulus}, with orthologous autosomal sequences from the non-dioecious but closely related outgroup species \textit{R. bucephalophorus} used to root the tree (Figure S2). We used the Neighbor-Joining method \citep{saitou1987neighbor}, with evolutionary distances computed using Maximum Composite Likelihood \citep{tamura2011mega5}. The inferred trees revealed strong support for Y-linked genes from the $XY_{1}XY_{2}$ ("North Carolina") race being paraphyletic (98\% bootstrap support), with samples from two populations (hereafter the "SC sub-clade") forming a monophyletic group, and samples from Florida and Georgia (hereafter the "FL sub-clade") also forming a monophyletic group, that was more closely related to the XY ("Texas") race (Figure S2). In light of this evidence for significant population substructure, and to consider between-population differences, we estimated X and Y diversity in each of the three sub-clades (SC, FL, TX) separately. For model-based analyses, we focused on the population sample from the Texas XY race, given that this reflects the presumed ancestral karyotype and has the largest sample size.
 
 \subsection*{Neutral predictions and the effect of sex ratio bias on diversity}
-To test whether the levels of diversity we observed on X, Y and autosomal chromosomes could be explained by the occurrence of biased reproductive sex ratios or high variance in reproductive success, we compared our empirical diversity estimates to predictions from a neutral model that jointly considers these two effects.
 
-In particular, the effective population size for genes on each chromosome can be given by  \citep{wright1931evolution}:
+
+To test whether the levels of diversity we observed on X, Y and autosomal chromosomes could be explained by the occurrence of biased reproductive sex ratios or high variance in reproductive success, we compared our empirical diversity estimates to predictions from a neutral model that considers these two effects (crow and kimura). In particular, assuming a sex ratio of 0.6, we calculated the effect of varaince in reproductive success on male and female $N_{e}$, as:
+
+by Ne = ((N(k -1))/((k -1)+(Vk / k)), where k and Vk are the mean and variance in offspring number, respectively (Kimura and Crow 1964). Using sex-specific values of k and Vk to calculate male and female Ne (Nm and Nf , respectively)
+
+
+respectively, where Vk is the variance in the number of progeny (Kimura and Crow, 1963; Crow and Denniston, 1988). Assuming a constant population size, the Ne for autosomes and sex chromosomes then be calculated using the expression from \citep{wright1931evolution}:
 
 \begin{equation}
-N_{e{A}} = \frac{4N_{m}N_{f}}{N_{m}+N_{f}}\label{eq:NeA}
+N_{e{A}} = \frac{4N_{m}N_{f}}{N_{m}+N_{f}}\label{eq:Ne}
 \end{equation}
 
 
 \begin{equation}
-N_{e{X}} = \frac{9N_{m}N_{f}}{4N_{m}+2N_{f}}\label{eq:NeX}
+N_{e{X}} = \frac{9N_{m}N_{f}}{4N_{m}+2N_{f}},\label{eq:NeX}
 \end{equation}
 
 \begin{equation}
-N_{e{Y}} = \frac{N_{m}}{2}\label{eq:NeY}
+N_{e{Y}} = \frac{N_{m}}{2},\label{eq:NeY}
 \end{equation}
+
+and the X/A and Y/A ratios as:
+
+\begin{equation}
+\frac{N_{e{X}}}{N_{e{A}} } = \frac{9(N_{m} + N_{f}}{8(2N_{m} + N_{f})} \label{eq:NeXNeA}
+\end{equation}
+
+and
+
+
+respectively. Thus, with equal sex ratios, $N_{e_{X}}/N_{e_{A}} = 0.75$, and $N_{e_{Y}}/N_{e_{A}} = 0.25$. However, as $Ne_{m}$ is reduced relative to $Ne_{f}$, the X/A ratio increases amd may become greater than 1, approaching 1.125 at the limit \citep{caballero1995}. With the level of neutral polymorphism at equilibrium given by the product of the mutation rate and the effective population size, $\theta=4N_{e}\mu$ \citep{watterson1975,kimura1984}, Figure 1C shows the predicted X/A and Y/A diversity ratios as a function of the sex ratio across a range of values for the variance in male reproductive success.
+
+%To consider the combined effects on diversity of our empirically estimated female-biased sex ratio ($(N_{f}$/$N_{m}+N_{f})$=$0.6$ together with high variance in male reproductive success, we calculated the nuetrally-expected X/A and Y/A ratios under a 0.6 sex ratio across a range of values for $C^2_{d{m}}$: 0 (no variance), 1 (Poisson distribution of offspring), 2 (Poisson*2), and 3 (Poisson*3).
+%\begin{equation}
+%N_{e{A}} = \frac{4N_{m}N_{f}}{N_{m}(1+C^2_{f})+N_{f}(1+C^2_{m})}\label{eq:NeA}
+%\end{equation}
+
+
+%where $N_{m}$ and $N_{f}$ are effective population sizes for males and females, respectively, and $C^2_{i}$ is the coefficient of variation in mating success for the $i$th sex, defined as the ratio of the standard deviation to the mean number of mates $\sigma_{i}/\mu_{d{i}}$. Similarly, for X-linked loci, where females contain two-thirds and males one-third of the alleles:
+
+%\begin{equation}
+%N_{e{X}} = \frac{9N_{m}N_{f}}{4N_{m}(1+C^2_{f})+2N_{f}(1+C^2_{m})}\label{eq:NeX}
+%\end{equation}
+
+%With no variation in mating success in either sex ($C^2_{d{m}}=C^2_{d{f}}=0$), equations 1 and 2 reduced to the familiar expressions from \citep{wright1931evolution}:
+
+
+%\begin{equation}
+%\label{eq:NeY}
+%\end{equation}
+
+%Because the $N_{e}$ for the Y chromosome depends on the male effective population size, $N_{m}$, the effect of variance in reproductive success on $N_{Y}$ can be modeled using the approach of Crow and Kimura (refs; and see ) and $N_{m}$ is given by:
+
+%\begin{equation}
+%N_{e{X}} = \frac{N(k-1)}{k-1}
+%\end{equation}
+
+
+%\begin{equation}
+%\label{eq:NeY}
+%\end{equation}
+
 
  Using these predictions, we calculated the expected X/A and Y/A ratios of diversity for the estimated \textit{R. hastatulus} sex ratio (N_{f}/$N_{m}+N_{f})=0.6$ \citep{pickup2013influence}, assuming that the level of neutral polymorphism is given by the product of the mutation rate and the effective population size, $\theta=4N_{e}\mu$ \citep{watterson1975}. Sex-specific variance in reproductive success can lead to departures from this prediction, and so we also evaluated whether any ratio of male- to female- effective population sizes could explain our observed combination of X/A and Y/A diversity.
 
@@ -118,7 +165,8 @@ N_{e{Y}} = \frac{N_{m}}{2}\label{eq:NeY}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=\linewidth]{Figure1.png}
+\noindent
+\includegraphics[width=\linewidth]{figure1.jpg}
 \caption{The relation between relative effective population size and sex ratio bias for genes on autosomes (\textbf{A}) and sex chromosomes (\textbf{B}) (Y chromosome in red). The sex ratio is shown as the proportion of males, $N_{m}/(N_{f}+N_{m})$, where $N_{m}$ and $N_{f}$ are the effective number of breeding males and females, respectively, plotted against $N_{e}/N$, where $N=N_{m}+N_{f}$ and the $N_{e}$ for sex chromosomes and autosomes is given in equations 1-3. Dotted curves show predictions in the standard neutral model, where both males and females produce Poisson-distributed offspring numbers and the chromosomal $N_{e}$'s are given by equations 4-6 \citep{wright1931evolution}. Solid curves correspond to increasing levels of variance in male reproductive success \citep{nomura2002effective} (see Methods). Assuming $\theta=4N_{e}\mu$ and equal neutral mutation rates among genes, the predicted $N_{e}$'s are used to generate null predictions for X/A and Y/A ratios of diversity.
 }
 \label{fig:spectrum}
@@ -220,7 +268,7 @@ Assuming that there is extensive variance in male reproductive success (\X), the
 
 \section*{Conclusions}
 
-The observation of widespread degeneration and diversity loss on Y chromosomes illustrates the importance of recombination for maintaining fitness and the genetic variability needed for adaptation (Maynard Smith 1978; Kondrashov 19 93; Barton & Charlesworth 19 9 8). The extensive loss of diversity on a young plant Y chromosome revealed by our study provides a clear example of the .... a large genomic regions that lack recombination. 
+The observation of widespread degeneration and diversity loss on Y chromosomes illustrates the importance of recombination for maintaining fitness and the genetic variability needed for adaptation (Maynard Smith 1978; Kondrashov 19 93; Barton & Charlesworth 19 9 8). The extensive loss of diversity on a young plant Y chromosome revealed by our study provides a clear example of the .... a large genomic regions that lack recombination.
 
 \section*{Acknowledgments}
 
