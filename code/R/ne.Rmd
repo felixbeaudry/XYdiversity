@@ -1,0 +1,102 @@
+---
+title: "Nucleotide diversity predictions"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+
+
+```{r}
+Nf=100 #number of females
+Nm=100 #number of males
+N=Nf+Nm #total number of individuals
+x=Nm/(Nf+Nm) #proportion of males
+
+op <- par(mfrow = c(1, 2))
+m=0
+f=0
+
+curve(((4*N*(1-x)*x*N)/((x*N*(1+f))+((1-x)*N*(1+m))))/N, from=0, to=1, lty=2,
+      xlab=expression(italic('N'[m]/'N'[m]+'N'[f])),
+      ylab=expression(italic('N'[e]/N)), 
+      main="Autosomes", ylim=c(0,1), xlim=c(0,1))
+
+mh=0.5
+curve(((4*N*(1-x)*x*N)/((x*N*(1+f))+((1-x)*N*(1+mh))))/N, from=0, to=1, add=T)
+
+m1=1
+curve(((4*N*(1-x)*x*N)/((x*N*(1+f))+((1-x)*N*(1+m1))))/N, from=0, to=1, add=T)
+
+m2=2
+curve(((4*N*(1-x)*x*N)/((x*N*(1+f))+((1-x)*N*(1+m2))))/N, from=0, to=1, add=T)
+
+m3=3
+curve(((4*N*(1-x)*x*N)/((x*N*(1+f))+((1-x)*N*(1+m3))))/N, from=0, to=1, add=T)
+
+#for sex-linked genes
+curve(((9*N*(x)*N*(1-x))/((4*N*x*(1+f))+(2*N*(1-x)*(1+m))))/N, from=0, to=1, lty=2,
+      xlab=expression(italic('N'[m]/'N'[m]+'N'[f])), 
+      ylab=expression(italic('N'[e]/N)), 
+      main="Sex chromosomes", ylim=c(0,1),xlim=c(0,1))
+
+curve(((9*N*(x)*N*(1-x))/((4*N*x*(1+f))+(2*N*(1-x)*(1+mh))))/N, from=0, to=1, add=T)
+
+curve(((9*N*(x)*N*(1-x))/((4*N*x*(1+f))+(2*N*(1-x)*(1+m1))))/N, from=0, to=1, add=T)
+
+curve(((9*N*(x)*N*(1-x))/((4*N*x*(1+f))+(2*N*(1-x)*(1+m2))))/N, from=0, to=1, add=T)
+
+curve(((9*N*(x)*N*(1-x))/((4*N*x*(1+f))+(2*N*(1-x)*(1+m3))))/N, from=0, to=1, add=T)
+
+curve((((N*(x)*(1+f))/2))/N, from=0, to=1, col="red", add=T)
+
+
+
+par(op)
+
+```
+
+```{r}
+
+ol <- par(mfrow = c(1, 2))
+
+curve(((9*N*(x)*N*(1-x))/((4*N*x*(1+f))+(2*N*(1-x)*(1+m))))/((4*N*(1-x)*x*N)/((x*N*(1+f))+((1-x)*N*(1+m)))), from=0, to=1, lty=2,
+      xlab="proportion of males", ylab="Relative Ne", main="X/A")
+
+curve(((9*N*(x)*N*(1-x))/((4*N*x*(1+f))+(2*N*(1-x)*(1+mh))))/((4*N*(1-x)*x*N)/((x*N*(1+f))+((1-x)*N*(1+mh)))), from=0, to=1, add=T)
+
+curve(((9*N*(x)*N*(1-x))/((4*N*x*(1+f))+(2*N*(1-x)*(1+m1))))/((4*N*(1-x)*x*N)/((x*N*(1+f))+((1-x)*N*(1+m1)))), from=0, to=1, add=T)
+
+curve(((9*N*(x)*N*(1-x))/((4*N*x*(1+f))+(2*N*(1-x)*(1+m2))))/((4*N*(1-x)*x*N)/((x*N*(1+f))+((1-x)*N*(1+m2)))), from=0, to=1, add=T)
+
+curve(((9*N*(x)*N*(1-x))/((4*N*x*(1+f))+(2*N*(1-x)*(1+m3))))/((4*N*(1-x)*x*N)/((x*N*(1+f))+((1-x)*N*(1+m3)))), from=0, to=1, add=T)
+
+#unsure if this is right; substituting in the modified Nm's here based on crow model where Nm*(km-1))/((km-1)+(x/km)) is the effect of male rep variance on male Ne.
+
+curve(((N*x*(1+f))/2)/((4*N*(1-x)*x*N)/((x*N*(1+f))+((1-x)*N*(1+m)))), from=0, to=1, col="red", lty=2, ylim=c(0,1), xlab="proportion of males", ylab="Relative Ne", main="Y/A")
+
+curve(((80*x*(1+f))/2)/((4*N*(1-x)*x*N)/((x*N*(1+f))+((1-x)*N*(1+mh)))), from=0, to=1, add=T, col="red")
+
+curve(((66.66667*x*(1+f))/2)/((4*N*(1-x)*x*N)/((x*N*(1+f))+((1-x)*N*(1+m1)))), from=0, to=1, add=T, col="red")
+
+curve(((50*x*(1+f))/2)/((4*N*(1-x)*x*N)/((x*N*(1+f))+((1-x)*N*(1+m2)))), from=0, to=1, add=T, col="red")
+
+curve(((40*x*(1+f))/2)/((4*N*(1-x)*x*N)/((x*N*(1+f))+((1-x)*N*(1+m3)))), from=0, to=1, add=T, col="red")
+
+par(ol)
+```
+
+```{r}
+curve(((N*x*(1+f))/2)/((4*N*(1-x)*x*N)/((x*N*(1+f))+((1-x)*N*(1+m)))), from=0, to=1, col="red", lty=2, ylim=c(0,1), xlab="proportion of males", ylab="Relative Ne", main="Y/A")
+
+curve(((80*x*(1+f))/2)/((4*N*(1-x)*x*N)/((x*N*(1+f))+((1-x)*N*(1+mh)))), from=0, to=1, add=T, col="red")
+
+curve(((66.66667*x*(1+f))/2)/((4*N*(1-x)*x*N)/((x*N*(1+f))+((1-x)*N*(1+m1)))), from=0, to=1, add=T, col="red")
+
+curve(((50*x*(1+f))/2)/((4*N*(1-x)*x*N)/((x*N*(1+f))+((1-x)*N*(1+m2)))), from=0, to=1, add=T, col="red")
+
+curve(((40*x*(1+f))/2)/((4*N*(1-x)*x*N)/((x*N*(1+f))+((1-x)*N*(1+m3)))), from=0, to=1, add=T, col="red")
+
+```
+
+
