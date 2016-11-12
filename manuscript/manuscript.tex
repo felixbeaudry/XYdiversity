@@ -28,9 +28,9 @@
 \correspondingauthor{Josh Hough}
 
 \begin{abstract}
-X and Y chromosomes differ in effective population size ($N_{e}$), rates of recombination, and exposure to natural selection, all of which can affect levels of genetic variability within the genome. On Y chromosomes with suppressed recombination, selection is expected to remove linked neutral variation and reduce the $N_{e}$ of Y compared to X chromosomes or autosomes. However, non-selective factors including female biased sex ratios and high variance in male reproductive success can also reduce Y-linked $N_{e}$, making it difficult to infer the causes of low Y diversity. Here, we investigate the factors affecting X- and Y-linked neutral polymorphsm during plant sex chromosome evolution in \textit{Rumex hastatulus} (Polygonaceae), a dioecious annual with recently evolved sex chromosomes. Strikingly, we find that neutral diversity for genes on the Y is on average \textasciitilde 2.1\% of the value for their homologues on the X, corresponding to a chromosome-wide reduction of \textasciitilde 93\% compared to the neutral expectation. We demonstrate that the magnitude of this diversity loss is inconsistent with a reduced male $N_{e}$ caused by neutral processes including female-biased sex ratios and high variance in male reproductive success. Rather, using forward population genetic simulations and estimates of the distribution of fitness effects of deleterious mutations, we show that Y diversity can be explained by purifying selection removing linked neutral variation, although selective sweeps may have also contributed. Given the recent origin of \textit{R. hastatulus} sex chromosomes, our study suggests that Y chromosome degeneration in the early stages occurs through strong selective interference among many linked sites rather than primarily through Y-inactivation followed by neutral genetic drift.
-%abstract is already 270 words. Should be 250 (but might be ok). Just can't get longer.
+X and Y chromosomes differ in effective population size ($N_{e}$), rates of recombination, and exposure to natural selection, all of which can affect levels of genetic variability within the genome. On Y chromosomes with suppressed recombination, selection is expected to eliminate neutral variation and reduce the $N_{e}$ of Y compared to X chromosomes or autosomes. However, non-selective factors including female biased sex ratios and high variance in male reproductive success can also reduce Y-linked $N_{e}$, making it difficult to infer the causes of low Y diversity. Here, we investigate the factors affecting X- and Y-linked neutral polymorphism during sex chromosome evolution in \textit{Rumex hastatulus} (Polygonaceae), a dioecious plant with recently evolved sex chromosomes. Strikingly, we find that neutral diversity for genes on the Y is on average \textasciitilde 2.1\% of the value for their homologues on the X, corresponding to a chromosome-wide reduction of \textasciitilde 93\% compared to the neutral expectation. We demonstrate that the magnitude of this diversity loss is inconsistent with a reduced male $N_{e}$ caused by neutral processes including female-biased sex ratios and high variance in male offspring number. Instead, using forward simulations, we show that diversity loss on the Y is consistent with interference among a large number (>/= 800Kb) of weakly selected mutations. Our results are in agreement with theory on "interference selection" and provide evidence that purifying selection on a large number of linked sites can substantially reduce neutral diversity. Given the recent origin of \textit{R. hastatulus} sex chromosomes (<15mya), our results further imply that Y chromosome degeneration in the early stages may be largely driven by such interference effects rather than by selectively-favoured gene silencing followed by neutral genetic drift.
 \end{abstract}
+
 
 \setboolean{displaycopyright}{true}
 
@@ -165,6 +165,19 @@ Note that with equal sex ratios, $N_{e_{X}}/N_{e_{A}} = 0.75$, and $N_{e_{Y}}/N_
 \subsection*{Simulations of purifying selection}
 To test whether our observed level of Y-chromosome diversity could be explained by the effects of linked purifying selection, we followed the approach used in \citep{Wilsonsayres2014} and conducted forward-time simulations of a non-recombining Y chromosome using the software SFSCODE \citep{hernandez2008flexible} and compared our empirical diversity estimates on the Y with those from simulations. This approach was implemented rather than using analytical predictions of background selection for a few reasons. First,... because the equilibrium background selection model over-predicts the reduction in diversity when there are many linked sites under selection \citep{KaiserCharlesworth}, as is expected to be the case for large Y chromosomes that lack crossing over.
 
+
+...there is no general analytical treatment describing the dynamics of interference among many alleles under selection and drift, with variable degrees of selection and linkage. Thus, forward computer simulations are still fundamental to the study of realistic situations.
+- dfe for the y is probably still fairly similar to that for the x -- shared genes
+
+- human Y: genes on y are not on X
+
+- 45331 = synsites in observed data after filtering
+  - summary stats phased texas autospy
+
+- doesnt matter about coding/non-coding in non-recombining regions? all of those neutral sites are linked
+
+
+
 To parameterize the forward simulations, we estimated the distribution of fitness effects of deleterious mutations (DFE) using our polymorphism data on the X-chromosome with the program DFE-alpha (\X Keightley and Eyre-Walker ref). This program fits a gamma distribution of selection coefficients to the observed frequency distribution of nonsynonymous and synonymous polymorphism from the population genetic analyses above. We used this estimated gamma distribution in our forward simulations. To examine the expected reduction in diversity, we varied the number of sites under selection, and obtained an approximate likelihood surface for our observed data based on the proportion of simulations that matched the observed estimate of $\pi_{synonymous}$ . To make the simulation output comparable to our data, we initialized the simulations with our empirically estimated autosomal $\theta$, adjusted for the expected neutral reduction in effective population size on the Y chromosome under a sex ratio of $N_{f}/(N_{f}+N_{m})=0.6$, and we sampled 6 haploid chromosomes per simulation. Simulated sequences contained 45,331 of linked neutral sequence from which we calculated diversity, matching the number of synonymous sites sampled in our empirical analyses on the Y chromosome (see Supporting Information).
 
 
@@ -199,7 +212,7 @@ Our analysis reveals that diversity on the \textit{R. hastatulus} Y chromosome i
 
 In contrast to the X chromosome, however, our data indicate a strong and consistent diversity reduction on the Y chromosome: an approximately 50 fold reduction compared to the mean $\theta_{Aut}$. We next consider several possible models - neutral and selective - that might explain this reduction.
 
-\subsection*{Female biased sex ratio and high variance in male fitness}
+\subsection*{Female biased sex ratio and high variance in male offspring number}
 
 The occurrence of female-biased sex ratios in \textit{R. hastatulus} is expected to lower Y diversity through lowering male $N_{e}$ and therefore the $N_{e}$ of the Y chromosome. In addition, the $N_{e}_{Y}$ might be further reduced due to high variance in male reproductive success (Figure 1), which is not unusual in annual wind-pollinated plants such as \textit{R. hastatulus} that exhibit extensive phenotypic plasticity in plant size and flower production (\X Harper 1977). Given that male plants in this species produce large amounts of pollen, and female flowers are uniovulate, there is reason to believe that there could be strong competition among males.
 
@@ -223,7 +236,31 @@ Assuming that there is extensive variance in male reproductive success (\X), the
 
 \subsection*{Background Selection and Selective Sweeps}
 
-%Although we do not exclude the possibility that positive selection has also reduced Y chromosome variability, our simulations suggest that the reduction in diversity arising from purifying selection is sufficient to explain our observed patters of neutral variation.
+
+discussion points to make:
+- Although we do not exclude the possibility that positive selection has also reduced Y chromosome variability, our simulations suggest that the reduction in diversity arising from purifying selection is sufficient to explain our observed patters of neutral variation.
+
+BGS predictions:
+-"Traditionally, the term ‘‘background selection’’ is used to refer both to the general effects of purifying selection on linked neutral diversity as well as to the limiting behavior that emerges when Ns-->inf. "
+- "existing theory struggles to predict genetic diversity when many sites experience selection at the same time, which limits our ability to interpret variation in DNA sequence data.". In particular,
+
+- "For non-crossover regions, both with and without gene conversion, there is a rapid initial decline of B with L, but B levels off at a value of  0.015 for > 640 000 sites. B values predicted by the BGS model decrease log-linearly with L"
+
+Very relevant remarks From Good et al.:
+
+- "Here, we have shown that simple behavior emerges in the limit of widespread interference. When fitness variation is composed of many individual mutations, the magnitudes and signs of their fitness effects are relatively unimportant. Instead, molecular evolution is controlled by the variance in fitness within the population over some effectively asexual segment of the genome" " In other words, we cannot conclude that interference is negligible just because ‘‘Nes’’, as inferred from data, is larger than one."
+
+- estimates of "Nes" ignore linkage by fiat under the assumption that sites evolve independently. But these estimates become unreliable precisely when small- and intermediate-effect mutations are most common
+
+- "Individual fitness effects may play a central role in single-site models, but we have shown that global properties like the variance in fitness and the corresponding linkage scale are more relevant for predicting evolution in interfering populations. "
+
+- "We have provided further evidence that even weak purifying selection, when aggregated over a sufficiently large number of sites, can generate strong deviations from neutrality. ""
+
+- "Apart from an overall reduction in polymorphism, the most prominent features of this frequency spectrum include an excess of rare alleles "
+
+- "silent site diversity decays as p=p0*1=Ns, while the shape of the site-frequency spectrum, Qn(i), becomes independent of all underlying parameters."
+
+- " we showed that the reduction in silent site diversity on this chromosome (p=p0*7) is consistent with the parameters Ns<30, NU<300, and NR<0, which fall in the middle of the interference selection regime"
 
 %This reduces their Ne, so that they behave as if they were subject to weaker selection than with free recombination, thereby reducing their effects on linked neutral or nearly neutral variants [9].
 
@@ -269,6 +306,9 @@ Assuming that there is extensive variance in male reproductive success (\X), the
 %We have focused on the ¢rst of these possibilities, but it might well not completely explain Y degeneration. If mutations of relatively minor ¢tness e¡ects, with Nes not much bigger than 1, become ¢xed more rapidly on a degenerating Ychromosome than on the X, selection pres- sure would develop to reduce the transcription of Y genes, provided that this was compensated for in the hetero- gametic sex by an increased activity of their counterparts on the X.
 
 \section*{Conclusions}
+
+
+%Our results indicate that highly reduced levels of variability in regions of the Drosophila genome that lack crossing over can largely be explained by the effects of selection on nonsynonymous sites subject to purifying selection of the magnitude indicated by recent work. It seems likely that similar effects will occur in other genomes or genomic regions with low rates of genetic recombination, such as many bacterial genomes, mitochondrial genomes and true Y or W chromosomes that are not completely degenerate, as well as asexual or highly self-fertilizing species.
 
 The observation of widespread degeneration and diversity loss on Y chromosomes illustrates the importance of recombination for maintaining fitness and the genetic variability needed for adaptation (Maynard Smith 1978; Kondrashov 19 93; Barton & Charlesworth 19 9 8). The extensive loss of diversity on a young plant Y chromosome revealed by our study provides a clear example of the .... a large genomic regions that lack recombination.
 
