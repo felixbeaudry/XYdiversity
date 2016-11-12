@@ -100,10 +100,10 @@ For each locus in our analysis, we calculated Watterson’s (1975) estimator of 
 To test whether the levels of diversity we observed on X, Y and autosomal chromosomes could be explained by the occurrence of biased reproductive sex ratios or high variance in reproductive success, we compared our empirical diversity estimates to predictions from a neutral model that considers these two effects \citep{kimura1964number}. In particular, we calculated the effect of variance in reproductive success on $N_{e}$ as:
 
 \begin{equation}
-N_{e_{i}}=\frac{N_{i}k_{i}-1}{k_{i}-1+\frac{V_{k_{i}}}{\overline{k}}} \label{eq:Vk}
+N_{e_{m}}=\frac{N_{m}k_{m}-1}{k_{m}-1+\frac{V_{k_{m}}}{\overline{k}}} \label{eq:Vk}
 \end{equation}
 
-where $k_{i}$ and $V_{k_{i}}$ are the mean and variance in offspring number, respectively, for the $i$th sex and $\overline{k}$ is the total mean number of progeny (Kimura and Crow 1964). Using sex-specific values of $k$ and $V_{k{i}}$ to calculate $N_{m}$ and $N_{f}$, the expected $N_{e}$ for autosomes and sex chromosomes is then obtained using equations from \citep{wright1931evolution}:
+where $k_{m}$ and $V_{k_{m}}$ are the mean and variance in male offspring number, respectively, and $\overline{k}$ is the total mean number of progeny \citep{kimura1964number}. Given the expected $N_{m}$ and $N_{f}$ for varying levels $V_{k_{m}}$, the expected $N_{e}$ for autosomes and sex chromosomes was then calculated using equations from \citep{wright1931evolution}:
 
 \begin{equation}
 N_{e{A}} = \frac{4N_{m}N_{f}}{N_{m}+N_{f}} \label{eq:Ne}
@@ -117,7 +117,7 @@ N_{e{X}} = \frac{9N_{m}N_{f}}{4N_{m}+2N_{f}} \label{eq:NeX}
 N_{e{Y}} = \frac{N_{m}}{2} \label{eq:NeY}
 \end{equation}
 
-Note that with equal sex ratios, $N_{e_{X}}/N_{e_{A}} = 0.75$, and $N_{e_{Y}}/N_{e_{A}} = 0.25$. Figure 1 shows the expected X/A and Y/A ratios as a function of the reproductive sex ratio across a range of values for the variance in male reproductive success. We therefore compared our empirical diversity ratios to these predictions (Figure 2) using a sex ratio of 0.6 as estimated in \textit{R. hastatulus}
+Note that with equal sex ratios, $N_{e_{X}}/N_{e_{A}} = 0.75$, and $N_{e_{Y}}/N_{e_{A}} = 0.25$. Figure 1 shows these expected X/A and Y/A ratios as a function of the sex ratio. We tested the fit of our empirical diversity ratios to these predictions (shown in Figure 2) using the sex ratio of 0.6 as estimated in \textit{R. hastatulus}.
 
 %To consider the combined effects on diversity of our empirically estimated female-biased sex ratio ($(N_{f}$/$N_{m}+N_{f})$=$0.6$ together with high variance in male reproductive success, we calculated the nuetrally-expected X/A and Y/A ratios under a 0.6 sex ratio across a range of values for $C^2_{d{m}}$: 0 (no variance), 1 (Poisson distribution of offspring), 2 (Poisson*2), and 3 (Poisson*3).
 %\begin{equation}
@@ -150,22 +150,22 @@ Note that with equal sex ratios, $N_{e_{X}}/N_{e_{A}} = 0.75$, and $N_{e_{Y}}/N_
 %\end{equation}
 
 
- %Using these predictions, we calculated the expected X/A and Y/A ratios of diversity for the estimated \textit{R. hastatulus} sex ratio (N_{f}/$N_{m}+N_{f})=0.6$ \citep{pickup2013influence}, assuming that the level of neutral polymorphism is given by the product of the mutation rate and the effective population size, $\theta=4N_{e}\mu$ \citep{watterson1975}. Sex-specific variance in reproductive success can lead to departures from this prediction, and so we also evaluated whether any ratio of male- to female- effective population sizes could explain our observed combination of X/A and Y/A diversity.
+%Using these predictions, we calculated the expected X/A and Y/A ratios of diversity for the estimated \textit{R. hastatulus} sex ratio (N_{f}/$N_{m}+N_{f})=0.6$ \citep{pickup2013influence}, assuming that the level of neutral polymorphism is given by the product of the mutation rate and the effective population size, $\theta=4N_{e}\mu$ \citep{watterson1975}. Sex-specific variance in reproductive success can lead to departures from this prediction, and so we also evaluated whether any ratio of male- to female- effective population sizes could explain our observed combination of X/A and Y/A diversity.
 
 
 \begin{figure}[htbp]
 \centering
 \noindent
 \includegraphics[width=\linewidth]{figure1.jpg}
-\caption{The relation between relative effective population size and sex ratio bias for genes on autosomes (\textbf{A}) and sex chromosomes (\textbf{B}) (Y chromosome in red). The sex ratio is shown as the proportion of males, $N_{m}/(N_{f}+N_{m})$, where $N_{m}$ and $N_{f}$ are the effective number of breeding males and females, respectively, plotted against $N_{e}/N$, where $N=N_{m}+N_{f}$ and the $N_{e}$ for sex chromosomes and autosomes is given in equations 1-3. Dotted curves show predictions in the standard neutral model, where both males and females produce Poisson-distributed offspring numbers and the chromosomal $N_{e}$'s are given by equations 4-6 \citep{wright1931evolution}. Solid curves correspond to increasing levels of variance in male reproductive success \citep{nomura2002effective} (see Methods). Assuming $\theta=4N_{e}\mu$ and equal neutral mutation rates among genes, the predicted $N_{e}$'s are used to generate null predictions for X/A and Y/A ratios of diversity.
+\caption{The relation between relative effective population size at equilibrium and sex ratio bias for genes on autosomes (\textbf{A}), the X chromosome (\textbf{B}), and the normalized X/A and Y/A ratios (\textbf{C}). The sex ratio is shown as the proportion of females, $N_{f}/(N_{f}+N_{m})$, plotted against $N_{e}/N$, where $N=N_{m}+N_{f}$ and the $N_{e}$'s' for sex chromosomes and autosomes are given in equations 2-4. Dotted curves show predictions when both males and females produce Poisson-distributed offspring numbers ($\overline{k}=2$). Solid curves correspond to increasing levels of variance in male reproductive success, ranging from Poisson/2 (top solid curve in panels A and B) to 3*Poisson (bottom most curve). Assuming $\theta=4N_{e}\mu$ and an equal neutral mutation rates among genes, these predicted $N_{e}$'s were used to generate our null neutral predictions for the X/A and Y/A ratios of diversity.
 }
 \label{fig:spectrum}
 \end{figure}
 
 \subsection*{Simulations of purifying selection}
-To test whether our observed level of Y-chromosome diversity could be explained by the effects of linked purifying selection, we followed the approach used in \citep{Wilsonsayres2014} and conducted forward-time simulations of a non-recombining Y chromosome using the software SFSCODE \citep{hernandez2008flexible} and compared our empirical diversity estimates on the Y with those from simulations. This approach was implemented rather than using analytical predictions of background selection primarily because the equilibrium background selection model over-predicts the reduction in diversity when there are many linked sites under selection \citep{KaiserCharlesworth}, as is expected to be the case for large Y chromosomes that lack crossing over.
+To test whether our observed level of Y-chromosome diversity could be explained by the effects of linked purifying selection, we followed the approach used in \citep{Wilsonsayres2014} and conducted forward-time simulations of a non-recombining Y chromosome using the software SFSCODE \citep{hernandez2008flexible} and compared our empirical diversity estimates on the Y with those from simulations. This approach was implemented rather than using analytical predictions of background selection for a few reasons. First,... because the equilibrium background selection model over-predicts the reduction in diversity when there are many linked sites under selection \citep{KaiserCharlesworth}, as is expected to be the case for large Y chromosomes that lack crossing over.
 
-To parameterize the forward simulations, we estimated the distribution of fitness effects of deleterious mutations (DFE) using our polymorphism data on the X-chromosome with the program DFE-alpha (Keightley and Eyre-Walker ref). This program fits a gamma distribution of selection coefficients to the observed frequency distribution of nonsynonymous and synonymous polymorphism from the population genetic analyses above. We used this estimated gamma distribution in our forward simulations. To examine the expected reduction in diversity, we varied the number of sites under selection, and obtained an approximate likelihood surface for our observed data based on the proportion of simulations that matched the observed estimate of $\pi_{synonymous}$ . To make the simulation output comparable to our data, we initialized the simulations with our empirically estimated autosomal $\theta$, adjusted for the expected neutral reduction in effective population size on the Y chromosome under a sex ratio of Nf/(Nf+Nm)=0.6, and we sampled 6 haploid chromosomes per simulation. Simulated sequences contained 45,331 of linked neutral sequence from which we calculated diversity, matching the number of synonymous sites sampled in our empirical analyses on the Y chromosome (see Supporting Information).
+To parameterize the forward simulations, we estimated the distribution of fitness effects of deleterious mutations (DFE) using our polymorphism data on the X-chromosome with the program DFE-alpha (\X Keightley and Eyre-Walker ref). This program fits a gamma distribution of selection coefficients to the observed frequency distribution of nonsynonymous and synonymous polymorphism from the population genetic analyses above. We used this estimated gamma distribution in our forward simulations. To examine the expected reduction in diversity, we varied the number of sites under selection, and obtained an approximate likelihood surface for our observed data based on the proportion of simulations that matched the observed estimate of $\pi_{synonymous}$ . To make the simulation output comparable to our data, we initialized the simulations with our empirically estimated autosomal $\theta$, adjusted for the expected neutral reduction in effective population size on the Y chromosome under a sex ratio of $N_{f}/(N_{f}+N_{m})=0.6$, and we sampled 6 haploid chromosomes per simulation. Simulated sequences contained 45,331 of linked neutral sequence from which we calculated diversity, matching the number of synonymous sites sampled in our empirical analyses on the Y chromosome (see Supporting Information).
 
 
 
@@ -210,7 +210,7 @@ The occurrence of female-biased sex ratios in \textit{R. hastatulus} is expected
 \centering
 \noindent
 \includegraphics[width=\linewidth]{figure2.jpg}
-\caption{The relation between relative effective population size and sex ratio bias for genes on autosomes (\textbf{A}) and sex chromosomes (\textbf{B}) (Y chromosome in red).
+\caption{new figure coming soon).
 }
 \label{fig:spectrum}
 \end{figure}
