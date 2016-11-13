@@ -1,0 +1,76 @@
+
+
+% and reduced genetic variation on Y chromosomes \citep{qiu2010nucleotide, ellegren2011,bachtrog2013NRG}.
+
+%Using estimates of neutral polymorphism on sex chromosomes and autosomes, together with forward population genetic simulations, our study tests whether sex chromosome evolution in the early stages is driven primarily by neutral processes, or whether linked selection has played a significant role.
+
+%Indeed, this is consistent with studies of Y-degeneration in young plant sex chromosome systems, which have found evidence for rapid genetic degeneration \citep{hough2014,papadopulos2015,charlesworth2016plant}.
+%In these cases, if Y-degeneration involved widespread gene silencing, as predicted by \citep{orr1998adaptive} and discovered on the neo-Y in \textit{Drosophila mrianada} \citep{zhou2012chromosome}, then selection might in fact play a less important role than theory would predict.
+%with the early stages of Y-degeneration instead being primarily driven by gene-silencing followed by neutral genetic drift \citep{bachtrog2013NRG}.
+
+%The strength of this effect is dependent on the rate of recombination between a selected locus and a neighbouring region; essentially, the effect becomes more pronounced with less recombination because of linkage disequilibrium between adjacent loci.
+
+%On the other hand, if gene silencing and Y inactivation occur very early during the process of Y chromosome degeneration, it is possible that the strength of linked selection is minimized rapidly even on relatively young Y chromosomes, and that much degeneration may occur neutrally following the silencing of Y-linked genes (cite backtrog NRG review).
+
+%because recombination suppression was relatively recent on plant Y chromosomes, it is an open question whether weak-HRI has had enough time to have a large effect. Although selective interference (indlucing BGS and Selective Sweeps) is expected to have the greatest effects during the early stages of Y-chromosome evolution \citep{bachtrog2008temporal} the R. hastatulus Y chromosome has undergone significant degeneration and gene loss over a short period of time, suggesting that it may behave more similarly to more ancient Y chromosomes.
+
+%Background selection (purifying selection against deleter- ious alleles) [27] and selective sweeps (positive selection for beneficial variants) [28] both have the effect of reducing nucleotide diversity at linked sites.
+%as modeled by \citep{kimura1964number} and \citep{nomura2002effective}.
+
+%evolutionary theory predicts that neutral variability on Y chromosomes with suppressed recombination can be significantly reduced by Hill-Robertson Interference (HRI), which causes a reduction in $N_{e}$ of neutral sites that are genetically linked to sites experiencing selection. The major types of HRI include (i) selection on strongly beneficial mutations ("selective sweeps") \citep{smith1974hitch,aquadro1994} (ii) selection against strongly deleterious mutations) \citep{charlesworth1996background,charlesworth1994effect} \citep{charlesworth1996CB,charlesworth2000degeneration}, and (iii) intereference between weakly selected sites (weak selection Hill-Robertson interference). In all of these processes, linkage  disequilibrium between selected and neutral sites results in a level of neutral variation below the level predicted in the absence of selection.
+
+%Consistent with an important role for Hill-Robertson interference in driving down diversity on the Y chromosome, s
+
+
+%discussion point?:
+%Moreover,
+
+
+
+
+
+######
+methods
+
+%from the Texas race, and separately for the 176 sex-linked and 11349 autosomal genes from the North Carolina race.
+%We also tested whether estimates of diversity for the X chromosome calculated from phased sequences from females were consistent with estimates from phased sequences from males. As no significant difference was observed (\X Figure? Table?), we report only results from females.
+
+%Finally, we tested for population substructure within and between the two sex chromosome races to control for the possibility that hidden substructure in our sampled populations could affect estimates of diversity. To do this, we constructed neighbor-joining trees of sex-linked sequences from all populations in our study. The analysis was conducted on an alignment of the X- and Y-linked genes from \textit{R. hastatulus}, with orthologous autosomal sequences from the non-dioecious but closely related outgroup species \textit{R. bucephalophorus} used to root the tree (Figure S2). We used the Neighbor-Joining method \citep{saitou1987neighbor}, with evolutionary distances computed using Maximum Composite Likelihood \citep{tamura2011mega5}. The inferred trees revealed strong support for Y-linked genes from the $XY_{1}XY_{2}$ ("North Carolina") race being paraphyletic (98\% bootstrap support), with samples from two populations (hereafter the "SC sub-clade") forming a monophyletic group, and samples from Florida and Georgia (hereafter the "FL sub-clade") also forming a monophyletic group, that was more closely related to the XY ("Texas") race (Figure S2). In light of this evidence for significant population substructure, and to consider between-population differences, we estimated X and Y diversity in each of the three sub-clades (SC, FL, TX) separately. For model-based analyses, we focused on the population sample from the Texas XY race, given that this reflects the presumed ancestral karyotype and has the largest sample size.
+
+
+
+%To consider the combined effects on diversity of our empirically estimated female-biased sex ratio ($(N_{f}$/$N_{m}+N_{f})$=$0.6$ together with high variance in male reproductive success, we calculated the nuetrally-expected X/A and Y/A ratios under a 0.6 sex ratio across a range of values for $C^2_{d{m}}$: 0 (no variance), 1 (Poisson distribution of offspring), 2 (Poisson*2), and 3 (Poisson*3).
+%\begin{equation}
+%N_{e{A}} = \frac{4N_{m}N_{f}}{N_{m}(1+C^2_{f})+N_{f}(1+C^2_{m})}\label{eq:NeA}
+%\end{equation}
+
+
+%where $N_{m}$ and $N_{f}$ are effective population sizes for males and females, respectively, and $C^2_{i}$ is the coefficient of variation in mating success for the $i$th sex, defined as the ratio of the standard deviation to the mean number of mates $\sigma_{i}/\mu_{d{i}}$. Similarly, for X-linked loci, where females contain two-thirds and males one-third of the alleles:
+
+%\begin{equation}
+%N_{e{X}} = \frac{9N_{m}N_{f}}{4N_{m}(1+C^2_{f})+2N_{f}(1+C^2_{m})}\label{eq:NeX}
+%\end{equation}
+
+%With no variation in mating success in either sex ($C^2_{d{m}}=C^2_{d{f}}=0$), equations 1 and 2 reduced to the familiar expressions from \citep{wright1931evolution}:
+
+
+%\begin{equation}
+%\label{eq:NeY}
+%\end{equation}
+
+%Because the $N_{e}$ for the Y chromosome depends on the male effective population size, $N_{m}$, the effect of variance in reproductive success on $N_{Y}$ can be modeled using the approach of Crow and Kimura (refs; and see ) and $N_{m}$ is given by:
+
+%\begin{equation}
+%N_{e{X}} = \frac{N(k-1)}{k-1}
+%\end{equation}
+
+
+
+
+%\begin{equation}
+%\label{eq:NeY}
+%\end{equation}
+
+
+%Using these predictions, we calculated the expected X/A and Y/A ratios of diversity for the estimated \textit{R. hastatulus} sex ratio (N_{f}/$N_{m}+N_{f})=0.6$ \citep{pickup2013influence}, assuming that the level of neutral polymorphism is given by the product of the mutation rate and the effective population size, $\theta=4N_{e}\mu$ \citep{watterson1975}. Sex-specific variance in reproductive success can lead to departures from this prediction, and so we also evaluated whether any ratio of male- to female- effective population sizes could explain our observed combination of X/A and Y/A diversity.
+
