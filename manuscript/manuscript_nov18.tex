@@ -127,7 +127,7 @@ Our analysis of polymorphism levels across the genome in the dioecious plant \te
 %\end{table}
 
 \subsection*{Female biased sex ratios and variance in male offspring number}
-The occurrence of female-biased sex ratios in \textit{R. hastatulus} is expected to lower Y diversity through a reduction in male $N_{e}$ and therefore the $N_{e}$ of the Y chromosome. In addition, male $N_{e}$ can be further reduced by high variance in male reproductive success (Figure 1), which is not unusual in annual wind-pollinated plants such as \textit{R. hastatulus} that commonly exhibit extensive phenotypic plasticity in plant size and flower production (\X Harper 1977). Given that male plants in this species produce large amounts of pollen, and female flowers are uniovulate, there may be strong competition among males to fertilize females. Such competition should increase levels of X-linked diversity to a level that is close to (or even higher than) levels of autosomal diversity (Charlesworth 1996b), while simultaneously reducing Y-linked diversity. Thus, to test whether high variance in male reproductive success could explain our observed Y/A and X/A ratios, we tested the fit of our data to predictions from a model of variance in male reproductive success \citep{kimura1964number}, using the estimated population sex ratio of 0.6 \citep{pickup2013influence}. As shown in Figure 2, our analysis indicated that, when evaluated at a sex ratio of 0.6, values for the variance in male reproductive success, $V_{k}_{m}$, that were large enough (range) to explain our observed reduction in Y/A diversity also predicted X/A diversity levels that were significantly greater than our observed values (range, P-value; Table 2). This indicates that the combined effects of a female-biased population sex ratio and extensive variance in male reproductive success is insufficient explain our observed  reduction in Y-chromosome diversity (Figure 2; Table 2).
+The occurrence of female-biased sex ratios in \textit{R. hastatulus} is expected to lower Y diversity through a reduction in male $N_{e}$ and therefore the $N_{e}$ of the Y chromosome. In addition, male $N_{e}$ can be further reduced by high variance in male reproductive success (Figure 1), which is not unusual in annual wind-pollinated plants such as \textit{R. hastatulus} that commonly exhibit extensive phenotypic plasticity in plant size and flower production (\X Harper 1977). Given that male plants in this species produce large amounts of pollen, and female flowers are uniovulate, there may be strong competition among males to fertilize females. Such competition should increase levels of X-linked diversity to a level that is close to (or even higher than) levels of autosomal diversity (Charlesworth 1996b), while simultaneously reducing Y-linked diversity. Thus, to test whether high variance in male reproductive success could explain our observed Y/A and X/A ratios, we tested the fit of our data to predictions from a model of variance in male reproductive success \citep{kimura1964number}, using the estimated population sex ratio of 0.6 \citep{pickup2013influence}. In common with most flowering plants, we do not have marker-based estimates of variance in male reproductive success in \textit{R. hastatulus}. However, as shown in Figure 2, we find that, when evaluated at a sex ratio of 0.6, values for the variance in male reproductive success, $V_{k}_{m}$, that were large enough (range) to explain our observed reduction in Y/A diversity also predicted X/A diversity levels that were significantly greater than our observed values (range, P-value; Table 2). This indicates that the combined effects of a female-biased population sex ratio and extensive variance in male reproductive success is insufficient explain our observed  reduction in Y-chromosome diversity (Figure 2; Table 2).
 
 %\begin{table}[htb]
 %\centering
@@ -156,14 +156,39 @@ The occurrence of female-biased sex ratios in \textit{R. hastatulus} is expected
 
 \subsection*{Purifying selection}
 
-
 - Basic results; diversity loss consistent with purifying selection
+
 - HRI vs BGS; bgs over predicts diversity loss; good reasons to think we are in interference space. Include calculations from good et al; Figure 3 (sims); Figure 4 (bgs model -maybe put in supp)
+
+Given that a large number of sites in the genome likely experience weak purifying selection (\X refs), the "interference" effect on Y chromosomes with suppressed recombination might alone cause a substantial diversity loss. Because there is no general analytical treatment describing the dynamics of such interference among a large number of linked sites under selection and drift, simulations are fundamental to investigating realistic situations. We therefore....
+
+...Individual fitness effects may play a central role in single-site models, but we have shown that global properties like the variance in fitness and the corresponding linkage scale are more relevant for predicting evolution in interfering populations. " - estimates of "Nes" ignore linkage by fiat under the assumption that sites evolve independently. But these estimates become unreliable precisely when small- and intermediate-effect mutations are most common - "Here, we have shown that simple behavior emerges in the limit of widespread interference. When fitness variation is composed of many individual mutations, the magnitudes and signs of their fitness effects are relatively unimportant. Instead, molecular evolution is controlled by the variance in fitness within the population over some effectively asexual segment of the genome" " In other words, we cannot conclude that interference is negligible just because ‘‘Nes’’, as inferred from data, is larger than one."
+
+- Indeed, simulations suggest that the effects of HRI on 100,000 linked sites can reduce polymorphism levels by \textasciitilde 30 \% compared to neutral expectations \citep{mcvean2000}, suggesting that HRI is likely important for the evolution of Y chromosomes.
+
+\subsection*{Can selective sweeps of beneficial mutations explain Y-diversity loss?}
 - Can we exclude sweeps empirically? Fitting frequency spectrum to model?; tajimas D?
 - Caveats; demography (e.g. changes in Ne) are not well known but could affect the metrics above; NeS assumes independence and can't be trusted; parameter uncertainties etc.
 - Implications for sex chromosome evolution in plants
 
+
+I guess to my mind a sweep explanation is a priori implausible for the following reasons: 1) a species wide sweep, for example, would wipe out diversity entirely, so that the existing polymorphisms must have accumulated since the sweep, and that seems unlikely if none of our Y SNPs are singletons? 2. If recombination is suppressed within the region that we are working with (which it must be, because the SNPs segregate as fully sex-linked), then the occurrence of chromosome-wide linkage in that nonrecombining region will also cause beneficial mutations to have a very low probability of fixation. The relevant linkage scale here is the entire length of the non-recombining region, L. I've been doing a bunch of these HRI simulations for the last couple of days, and just as an example, in a simple model with the following parameters:
+
+mutation rate: 1e-6
+recombination rate: 0
+generations: 1000 generations after equilibrium is reached (6000 generations total)
+L= 100000 (100kb)
+N=1000 individuals
+s =0.05 (beneficial)
+
+the reduction in the probability of fixation of a beneficial mutation arising from linkage among 100,000 sites in a nonrecombining chromosome, is 98!!! (the reduction is relative to a model of independence among  selected sites). That's huge (and it decreases with larger L). So at least on a first pass, the probability that a selected sweep is the explanation here seems very low.
+
+\subsubsection*{Implications for the evolution of young Y chromosomes}
+Right. On the other hand you can imagine that widespread silencing could happen precisely because of the problem of interference selection. For example, interference causes selection to be ineffective, so that Y chromosomes accumulate deleterious mutations and do not fix beneficial ones. This could then generate selection to down-regulate or silence such "unfit" Y-linked genes, as in an Orr & Kim type of model. So yeah, I don't think that finding many selected sites would necessarily preclude a model of widespread gene silencing. It could just mean that we haven't gotten there yet (which would still be interesting).
+
 \section*{Conclusions}
+
+This is why I think HRI is so important for the Y. Not only does it result in a significant reduction in diversity when selection acts on linked deleterious mutations, but it also substantially reduces the probability of fixation of beneficial mutations. I grant that the probability of fixation of a beneficial mutation, and therefore the probability that a sweep explains our data, is not zero, but given the probable size of L on the R hastatulus Y chromosome, I don't think the claim that "our data is just as easily explained by sweeps" is defensible. If it is, then we haven't really done anything valuable here.
 
 \section*{Acknowledgments}
 
