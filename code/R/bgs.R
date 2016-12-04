@@ -1,6 +1,6 @@
 print(20*math.exp(-0.02/(0.1+0.005)))
 
-curve(0.2083333*(exp(-(0.02/((2*x)+0)))), from=0, to=1,
+curve(0.25*(exp(-(0.02/((2*x)+0)))), from=0, to=1,
       main="Expected Y/A diversity under BGS",
       xlab="selection coefficient (s)",
       ylab = expression(paste("E[", pi,"]")), las=1,
@@ -25,3 +25,13 @@ text(0.03,0.21,expression(paste(, pi[0],)))
 
 (0.2083333*(exp(-(0.02/((2*0.1)+0))))
 )
+
+
+theta
+Ne
+u
+h
+r
+U
+
+pi_not=theta
