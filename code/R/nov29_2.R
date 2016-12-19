@@ -32,3 +32,9 @@ Qn(i): [ 1.          0.12343715  0.05657223  0.04769479  0.05992975]
 
 plot(log(0.12343715/1), log(0.05657223/0.12343715), log(0.04769479/0.05657223), log(0.05992975/0.04769479))
 plot(-2.09202, -0.780214, -0.170696, 0.228351)
+
+
+barplot(c(tx_y_auto,ya_given_x,bgs_exp), ylim=c(0,0.04), col="gray52", ylab="Y/A",
+        names.arg=c("observed", "predicted from X", "predicted by bgs"), cex.names=0.75)
+segments(x0=0.7,y0=0.01,x1=0.7,y1=0.04,lwd=0.75)
+arrows(x0=0.7,y0=0.01,x1=0.7,y1=0.04,lwd=0.75,angle = 90, code = 3, length = 0.04)

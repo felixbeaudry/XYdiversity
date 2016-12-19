@@ -1,4 +1,28 @@
-print(20*math.exp(-0.02/(0.1+0.005)))
+# Y/A
+s=0.02
+h=0.5
+hs=0.01
+mu=7*10^-9
+U=2*mu
+theta=4*Nem*mu
+
+
+curve(x*(0.5)*(exp(-(U/((2*s*h))))), from=0, to=1,
+      ylab = expression(paste("E[", pi,"]")), las=1,
+      #ylim=c(0,0.3),
+      #xlim=c(0,0.2),lwd=3)
+)
+#abline(h=0.2,lty=2)
+#abline(h=0.02,lty=1, col="red",lwd=3)
+#legend(x=0.12,y=0.3, cex=0.8, box.lty=0, c("Nf/(Nf+Nm) = 0.6","U = 0.02","h = 1","r = 0", expression(paste("", pi[0], paste(" = ",N[em]/2)))))
+
+text(0.03,0.029, cex=1, expression(paste(, theta,)))
+text(0.03,0.21,expression(paste(, pi[0],)))
+
+
+
+
+#print(20*math.exp(-0.02/(0.1+0.005)))
 
 curve(0.25*(exp(-(0.02/((2*x)+0)))), from=0, to=1,
       main="Expected Y/A diversity under BGS",

@@ -122,7 +122,8 @@ abline(lty=2,h=0.0004)
 So, theoretically, the maximum Y/A reduction relative to neutrality is 0.5. We have a reduction of 0.00156 (+/- ).
 
 ```{r}
-
+xa_given_y=0.0003 # y theta * 3
+ya_given_x=0.00156 #x theta * 1/3
 plot(c(tx_x_auto/0.75,XA_0.6/0.75, xa_given_y/0.75),
         ylim=c(0,1.5),
         ylab="X/A relative to neutral model", main="X/A for a sex ratio of 0.6", 
@@ -138,8 +139,6 @@ abline(lty=2,h=0.0004)
 #### Plot empirical, simulated, and theoretically predicted diversity ratios for a range of Ne sex ratios, with CI's
 ```{r}
 
-xa_given_y=0.0003 # y theta * 3
-ya_given_x=0.00156 #x theta * 1/3
 XA=c(tx_x_auto, XA_0.5, XA_0.6, XA_0.7, XA_0.8, XA_0.9)
 YA=c(tx_y_auto, YA_0.5, YA_0.6, YA_0.7, YA_0.8, YA_0.9)
 ChrRatios=cbind(XA,YA)
@@ -170,12 +169,24 @@ arrows(x0=8.5,y0=0.01,x1=8.5,y1=0.04,lwd=0.75,angle = 90, code = 3, length = 0.0
 
 ```{r}
 #0.25*(exp(-(0.02/((2*0.002)+0)))
-bgs_exp=0.00168449
+#bgs_exp=0.00168449
 
-barplot(c(tx_y_auto,ya_given_x,bgs_exp), ylim=c(0,0.04), col="gray52", ylab="Y/A",
-        names.arg=c("observed", "predicted from X", "predicted by bgs"), cex.names=0.75)
-segments(x0=0.7,y0=0.01,x1=0.7,y1=0.04,lwd=0.75)
-arrows(x0=0.7,y0=0.01,x1=0.7,y1=0.04,lwd=0.75,angle = 90, code = 3, length = 0.04)
+BGS_YA=0.0054
+SEXRATIO_YA=YA_0.6
+OBS_YA=0.018
+  
+#barplot(c(OBS_YA/YA_0.6,BGS_YA/YA_0.6), ylim=c(0,0.2), col="gray52", ylab="Y/A ratio relative to the neutral prediction",
+#        names.arg=c("observed", "BGS theory prediction"), cex.names=0.75)
+#segments(x0=0.7,y0=0.009/YA_0.6,x1=0.7,y1=0.03/YA_0.6,lwd=0.75)
+#arrows(x0=0.7,y0=0.009/YA_0.6,x1=0.7,y1=0.035/YA_0.6,lwd=0.75,angle = 90, code = 3, length = 0.04)
+
+
+par(las=1)
+barplot(c(OBS_YA/YA_0.6,BGS_YA/YA_0.6), ylim=c(0,0.2), col="gray52",ylab=expression(paste(pi/pi[0])),
+        names.arg=c("observed", "BGS theory"), cex.names=0.75)
+segments(x0=0.7,y0=0.009/YA_0.6,x1=0.7,y1=0.035/YA_0.6,lwd=0.75)
+arrows(x0=0.7,y0=0.009/YA_0.6,x1=0.7,y1=0.035/YA_0.6,lwd=0.75,angle = 90, code = 3, length = 0.04)
+
 
 ```
 
