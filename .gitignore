@@ -29,4 +29,5 @@
 *.RData
 *.synctex.gz\(busy\)
 *.xlsx
+*.xwm
 temp/**
