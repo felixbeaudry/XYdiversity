@@ -1,15 +1,0 @@
--W L 1 2 0 1 1 0.184 0.003
-
--W [P <pop>] [L <locus>] [H <type> [args]] [*F <alleleFreq> \[w] [T [R <minFreq> <maxFreq> [S] [A [G <gens>]] [M <maxReps>]] \[F [a] <file>]]] <type> [args]pop=1 (only 1)
-L=1
-type=2 (gamma T)
-p.pos=0 (probability positive)
-aP=1
-lP=1 (mean aP/lP, var =aP/lP^2) <-- only used for beneficial mutations. Here, p.pos=0, so irrelevant
-aN=0.184 (k=shape parameter)
-lN=0.003 (theta=scale parameter)
-
-Where, in each simulation, $lN=0.184/($0.01*5000)
-
-
--|Υ|:"L 0 2 0 0.0 1.0 0.206 0.0004931"
