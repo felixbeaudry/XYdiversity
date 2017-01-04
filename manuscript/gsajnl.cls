@@ -1,12 +1,12 @@
 % This class file is provided for authors submitting to the
 % Genetics Society of America's GENETICS Journal
 %
-% Version: 1.3, 2016/04/16
+% Version: 1.4, 2016/07/13
 %
 % Produced by Overleaf (www.overleaf.com)
 %
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{gsajnl}[16/04/2016, v1.3]
+\ProvidesClass{gsajnl}[13/07/2016, v1.4]
 \AtEndOfClass{\RequirePackage{microtype}}
 
 % Options for element switching
@@ -147,6 +147,10 @@
 \fancyfoot[LO,RE]{}
 \renewcommand{\headrulewidth}{0pt}% % No header rule
 \renewcommand{\footrulewidth}{0pt}% % No footer rule
+
+%% 13 July 2016: make sure sections are unnumbered
+\setcounter{secnumdepth}{0}
+\setcounter{tocdepth}{0}
 
 % Section/subsection/paragraph set-up
 \RequirePackage[explicit]{titlesec}
