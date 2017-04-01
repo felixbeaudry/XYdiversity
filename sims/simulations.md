@@ -1,6 +1,5 @@
 ## Simulating Hill-Robertson Interference during Y-chromosome evolution
 
-
 ### 1. Neutral simulations
 We’ll start with a basic neutral simulation that models a genomic region of length **100 kb** in a population of **1000 diploid individuals** (500 Y chromosomes), evolving over **10,000 generations**. Neutral mutations occur uniformly on the Y at a rate of **10-7 per bp per generation**.
 
@@ -36,10 +35,9 @@ initialize()
 //finally, output the data from all 500 males in MS format
 1 { sim.addSubpop("p1", 1000); }
 10000 late() { p1.outputMSSample(500,requestedSex="M"); }
-
 ```
 
-The script above is here(link), and can be run with the command: `slim Yneutral.txt`
+The script above is here(link), and can be run with the command: `slim Y_neutral.txt`
 
 ##### Check that Y/A neutral diversity is 1/4 after 4Ne generations
 
