@@ -15,7 +15,6 @@ initialize()
 	// Initialize a uniform chromosome of length 100 kb
 	// here, "g1" is 100 kb and ranges from position 0 to 99999
 	initializeGenomicElement(g1, 0, 99999);
-
 	// set uniform recombination rate along the region
 	// can be ignored: the Y doesnt do recombination in slim
 	initializeRecombinationRate(0);

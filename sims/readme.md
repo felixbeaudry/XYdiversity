@@ -45,9 +45,9 @@ initialize()
 
 The script above is [here](https://github.com/houghjosh/XYdiversity/blob/master/sims/Y_neutral.txt), and can be run with the command: `slim Y_neutral.txt` (assuming slim is in your path)
 
-##### Check that Y/A neutral diversity is 1/4 after 4Ne generations
+##### Check that Y/A neutral diversity is 1/4 after 4Ne generations in a mutation-drift model
 
-As a quick check that this behaves the way we want, let's use the same neutral simulation parameters above and simulate autosomal chromosomes (using the `initializeSex("A");` callback), setting a non-zero recombination rate, and then calculate the Y/A ratio of neutral diversity after _4Ne_ generations; the mean time to fixation for a neutral mutation. We expect that the Y/A diversity ratio should be 0.25. In this [script](https://github.com/houghjosh/XYdiversity/blob/master/sims/A_neutral.txt), recombination was set to occur uniformly at a rate of 10-8 per bp per generation (corresponding to 1 cM/Mbp).
+As a quick check that this behaves the way we want, let's use the same neutral simulation parameters above and simulate autosomal chromosomes (using the `initializeSex("A");` callback), setting a non-zero recombination rate, and then calculate the Y/A ratio of neutral diversity after _4Ne_ generations; the mean time to fixation for a neutral mutation. We expect that the Y/A diversity ratio should be 0.25. In this [script](https://github.com/houghjosh/XYdiversity/blob/master/sims/A_neutral.txt), recombination is set to occur uniformly at a rate of 10-8 per bp per generation (corresponding to 1 cM/Mbp).
 
 Since polymorphism data is outputted in MS format, we can calculate diversity statistics directly from the output, by way of a pipe to [msstats](https://github.com/molpopgen/msstats):
 
@@ -55,71 +55,72 @@ Since polymorphism data is outputted in MS format, we can calculate diversity st
 
 `slim A_neutral.txt | msstats `
 
-Such tests show that average Y/A diversity after _4Ne_ generations is approximately 0.25, as expected. Let's look at the distribution of [Wattersons's theta](https://www.ncbi.nlm.nih.gov/pubmed/1145509) for 500 replicate sims.
+Such tests show that average Y/A diversity after _4Ne_ generations is approx. 0.25, as expected. Let's look at the mean pi across 500 replicate simulations for Y and autosomes.
 
 ```Shell
-for i in {1..500}; do slim Y_neutral.txt | msstats | awk '{print $ 4}' | sed '1d;2d'; done > neutral_Y_thetas
-
-for i in {1..500}; do slim A_neutral.txt | msstats | awk '{print $ 4}' | sed '1d;2d'; done > neutral_A_thetas
-
+for i in $(seq 1 500); do slim -d L=100000 A_neutral.txt | msstats | awk '{print $5}' | sed '1d;2d'; done | awk -v N=0 '{ sum += $N } END { if (NR > 0) print sum / NR }'
 ```
 
-- plot
+`39.3508`
+
+This is pretty close to our expectation for theta: `4*1000*10^-7*100000`
+
+```Shell
+for i in $(seq 1 500); do slim -d L=100000 Y_neutral.txt | msstats | awk '{print $5}' | sed '1d;2d'; done | awk -v N=0 '{ sum += $N } END { if (NR > 0) print sum / NR }'
+```
+
+`10.3366`
+
+This is also about what we expect for theta: `4*500*10^-7*100000` (note that the relevant _N_ for the Y chromosome is the N of males. 500 in this case)
+
+and the netrual Y/A ratio: 10.3366/39.3508
+
+`= 0.262678268`, which is approximately 1/4 as expected. (can verify that this converges to 0.25 by increasing the n's and reps. I've just done 500 reps here for 500 Y chromosomes)
 
 ### 2. Adding deleterious mutations
 
-Our goal is to simulate selection against deleterious mutations on the Y chromosome to understand the extent to which genetic associations among selected sites can affect levels of neutral polymorphism. Because selective interference among mutations depends on **the number of selected loci**, _L_, we initialize the simulation with our independently-estimated number of sites under selection in _Rumex_. This _L_ parameter is then varied to consider the relation between the number of selected loci and the reduction in linked neutral diversity.
+Our goal is to simulate selection against deleterious mutations on the Y chromosome to understand the extent to which associations among selected sites affect levels of neutral polymorphism. Because selective interference among mutations should depend on **the number of selected loci**, _L_, here we explore a range of values of _L_ and determine the relation between the number of selected loci and the reduction in linked neutral diversity.
 
-We use a gamma distribution to model deleterious mutations at functional sites. This DFE type is defined by two parameters, a shape parameter and a mean value. Here we use empirically-estimated values for the shape and mean of the DFE obtained from the X-chromosome.  
+We use a gamma distribution to model deleterious mutations at functional sites. This DFE type is defined by two parameters, a shape parameter and a mean value. Here we use empirically-estimated values for the shape and mean of the DFE obtained from the X-chromosome in _R. hastatulus_.  
 
+By setting `initializeGenomicElement(g1, 0, L);`, we can then specify _L_ on the command line using `slim -d`, and then iteratively run the simulations across a range of inputs for _L_.
 
-```R
-// simulation of Y chromosome evolution with deleterious mutations
-initialize()
-{
-	// set the overall mutation rate per base position per generation
-	initializeMutationRate(1e-7);
+First, let's do 1000 simulations using our empirically-estimated (from cytological data) number of sites likely to be experiencing selection on the Y (13 million) and calculate pi
 
-	// define mutation types
-	// "m1"=neutral, 0.5=dominance (ignored), f=fixed dfe, 0=s
-	initializeMutationType("m1", 0.5, "f", 0.0);
-
-	// define genomic element type
-	// This creates a new genomic element type. A genomic element type represents a particular type of chromosomal region – introns, exons, UTRs, etc. Here, "g1" is defined as using mutation type m1 for all of its mutations (as specified by the proportion 1.0, the third parameter)
-	initializeGenomicElementType("g1", m1, 1.0);
-
-	// initialize a uniform chromosome of length 100 kb
-	// This callback uses "g1" to set up the genomic element
-	// Here, "g1" is 100 kb and ranges from position 0 to 99999
-	initializeGenomicElement(g1, 0, 99999);
-
-	// set uniform recombination along the chromosome
-	// can be ignored as the Y doesnt undergo recombination
-	initializeRecombinationRate(0);
-
-	// initialize chromosome type
-	initializeSex("Y");
-}
-
-// now create 1 population of 500 individuals
-// this call is scheduled to run at generation 1; the very beginning of the simulation
-// note that slim simulates diploids: therefore, 1000 individuals are needed for a population of 500 Y chromosomes
-// finally, output the data from all 500 males in MS format
-1 { sim.addSubpop("p1", 1000); }
-10000 late() { p1.outputMSSample(500,requestedSex="M"); }
+```Shell
+for i in $(seq 1 1000); do slim -d L=1300000 Y_deleterious.txt | msstats | awk '{print $5}' | sed '1d;2d'; done | awk -v N=0 '{ sum += $N } END { if (NR > 0) print sum / NR }'
 ```
 
-S cannot be described simply as a reduction in the efficacy of selection and effective population size in standard models of selection and drift. Rather, IS can be better understood with models that incorporate a constant “traffic” of competing alleles
+expect: `4*500*10^-7*1300000 = 260`
 
-### 3. Adding beneficial mutations
+observed: `23.2274`
 
-To evaluate the alternative possibility that selective sweeps of beneficial mutations is primarily responsible for the reduction in diversity that we observed, we run the same simulation above with the addition of beneficial mutations and determine whether this improves the fit of our data
-
-
+reduction: `0.088 = 8.8%`
 
 
+OK, so do it across a range of _L_, in increments of 100000kb, with 500 replicate sims at each _L_ and estimate pi
+
+```Shell
+for L in $(seq 100000 100000 1500000 | awk -F',' '{printf "%.f\n", $1}'); do for i in $(seq 1 1000); do slim -d L=${L} Y_deleterious.txt | msstats | awk '{print $5}' | sed '1d;2d'; done | awk -v N=0 '{ sum += $N } END { if (NR > 0) print sum / NR }'; done; > pi_1000_reps.txt
+```
+
+This gives you a list of 15 pi values. These represent the means of the 500 simulated pi's for each increment of _L_
+
+Let's gather the pi's and values for L together and compare to expected pi's
+
+```Shell
+for L in $(seq 100000 100000 1500000 | awk -F',' '{printf "%.f\n", $1}'); do awk "BEGIN {print 4*500*1e-8*${L}}"; done > exp_pi.txt
+
+seq 100000 100000 1500000 | awk -F',' '{printf "%.f\n", $1}' > L.txt
+
+paste L.txt pi.txt exp_pi.txt > data.txt
+```
+
+Now plot and fit a function
 
 
+### 3. Estimating model parameters with ABC
 
-
+install.packages("EasyABC")
+library(EasyABC)
 
