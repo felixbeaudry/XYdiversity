@@ -1,3 +1,3 @@
-# Population genetics of X and Y chromosomes in _Rumex hastatulus_
+# Population genetics of X and Y chromosomes
 
-This repository stores some code, small data files, and links to the sequence data used in our project investigating X and Y chromosome diversity in  _Rumex hastatulus_.
+Some code used for population genetic analyses of X and Y chromosomes in _Rumex hastatulus_ 

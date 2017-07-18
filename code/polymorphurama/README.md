@@ -1,6 +1,7 @@
 # Polymorphurama
 
-Modified version of Polymorphurama used to estimate population genetic statistics for our project on [X and Y chromosome diversity in _R.hastatulus_](https://github.com/houghjosh/XYdiversity)
+Modified version of Polymorphurama used to estimate population genetic statistics for sex 
+chromosomes
 
 ### References
 

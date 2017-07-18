@@ -1,6 +1,7 @@
 # MLHKA
 
-Highly modified version of MLHKA used for obtaining maximum likelihood estimates of Y-polymorphism and part of our project on [X and Y chromosome diversity in _R.hastatulus_](https://github.com/houghjosh/XYdiversity)
+Modified version of MLHKA used for obtaining maximum likelihood estimates of Y-polymorphism and 
+part of our project on [X and Y chromosome diversity in _R.hastatulus_](https://github.com/houghjosh/XYdiversity)
 
 ### Reference
 
