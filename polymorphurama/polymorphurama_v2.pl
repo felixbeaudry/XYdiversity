@@ -1,53 +1,30 @@
 #!perl 
+#edited by Felix Beaudry, May 8 2018
+# run with: perl polymorphurama_v2.pl file_extension directory/ frequency_cut_off
 
 use BeginPerlBioinfoB_1;
-
-
-
-# the command line is perl code_analyser.pl infile frequency_cut_off
-
-# where the infile contains a list with names of NONA alignments to analyse
-
-# spits out the frequency spectrum of mutations (synonymous, non-synonymous)
-
-# performs codon-bias analysis using codon table for D. pseudoobscura
-
-# frequency-cut-off ignores polymorphisms of a frequency of less than the cutt-off for McDonald-Kreitman tables
-
-# to run: perl Polymorphurama.pl infile_list frequency-cutt-off 
-
-
 
 my $pattern=$ARGV[0];
 
 my $d2 = $ARGV[1];
 my $freq_cut_off = $ARGV[2];
+
 open (OUT_DIFF, '>out_diff_codons.txt') or die "S_Swe't open outfile\n";
-
 open (OUT, '>frequencies.xls') or die "S_Swe't open outfile\n";
-
 open (OUT2, '>summarystats.xls') or die "S_Swe't open outfile\n";
-
 open (OUT3, '>codon_bias.xls') or die "S_Swe't open outfile\n";
-
 open (OUT4, '>mutation_bias.xls') or die "S_Swe't open outfile\n";
 
 print OUT2 "locus \t samp_sizetot \t SynSitestot \t theta_syntot \t S_Syntot \t  S_Syn_freq>$freq_cut_offtot \t D_Syntot  \t pi_Syntot  \t pi_JC_Syntot  \t Dxy_Syntot  \t Dxy_JC_Syntot \t SynSites_4-foldtot  \t D_4-foldtot \t D_JC_4-foldtot \t TajD_Syntot  \t Fu&LiD_Syntot \t\t RepSitestot  \t theta_reptot \t S_Reptot  \t S_Rep_freq>$freq_cut_offtot \t D_Reptot  \t pi_Reptot  \t pi_JC_Reptot  \t Dxy_Reptot  \t Dxy_JC_Reptot  \t TajD_Reptot  \t Fu&LiD_Reptot \n";
-
-
 
 @file=&read_dir($d2,$pattern);
 
 $poly_set=0;
 
-
-
 # array of arrays from 1 to numseq with count of polymorphic variants in each frequency class (from 1 to numseq-1)
-
 # i.e. a singleton is in frequency class $poly_freq_Syn[1]
 
 my @poly_freq_Syn_ALL = ();	  
-
 my @poly_freq_Rep_ALL = ();         
 
 
